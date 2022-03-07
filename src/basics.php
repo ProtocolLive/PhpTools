@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.03.05.00
+//2022.03.07.00
 
 function AccentInsensitive(string $Text):string{
   return strtr($Text, [
@@ -64,7 +64,7 @@ function Textbox(string $Text):string{
   return str_replace(["\n", "\r"], '<br>', $Text);
 }
 
-function CreateDir(
+function DirCreate(
   string $Dir,
   int $Perm = 0755,
   bool $Recursive = true
