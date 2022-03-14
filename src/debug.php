@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.03.07.00
+//2022.03.14.00
 
 function HandlerError(
   int $errno,
@@ -12,7 +12,7 @@ function HandlerError(
 ):void{
   DebugTrace();
   ob_start();
-  echo '</select><pre>';
+  echo '</option></select><pre>';
   echo 'Error #' . $errno . ' - ' . $errstr . ' in ' . $errfile . ' (' . $errline . ")\n";
   echo "Backtrace:\n";
   debug_print_backtrace();
@@ -29,7 +29,7 @@ function HandlerError(
 function HandlerException($Exception):void{
   DebugTrace();
   ob_start();
-  echo '</select><pre>';
+  echo '</option></select><pre>';
   echo "Exception:\n";
   var_dump($Exception);
   echo "Backtrace:\n";
@@ -46,7 +46,7 @@ function HandlerException($Exception):void{
 
 function vd(mixed $v):void{
   ob_start();
-  echo '</select><pre>';
+  echo '</option></select><pre>';
   echo date('H:i:s') . " Variable debug:\n";
   var_dump($v);
   echo "Backtrace:\n";
