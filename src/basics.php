@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.03.07.00
+//2022.03.14.00
 
 function AccentInsensitive(string $Text):string{
   return strtr($Text, [
@@ -57,11 +57,6 @@ function Number(int $N, int $Precision):string{
   $temp = new NumberFormatter('pt-br', NumberFormatter::DECIMAL);
   $temp->setAttribute(NumberFormatter::MIN_FRACTION_DIGITS, $Precision);
   return $temp->format($N);
-}
-
-function Textbox(string $Text):string{
-  $Text = str_replace(["\n\r", "\r\n"], '<br>', $Text);
-  return str_replace(["\n", "\r"], '<br>', $Text);
 }
 
 function DirCreate(
