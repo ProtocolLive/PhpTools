@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.03.14.00
+//2022.03.17.00
 
 function AccentInsensitive(string $Text):string{
   return strtr($Text, [
@@ -68,5 +68,17 @@ function DirCreate(
     return false;
   else:
     return mkdir($Dir, $Perm, $Recursive);
+  endif;
+}
+
+function ArgV():void{
+  if($_SERVER['argc'] > 0):
+    unset($_SERVER['argv'][0]);
+    $temp = '';
+    foreach($_SERVER['argv'] as $param):
+      $temp .= $param . '&';
+    endforeach;
+    parse_str($temp, $_temp);
+    $_SERVER = array_merge($_SERVER, $_temp);
   endif;
 }
