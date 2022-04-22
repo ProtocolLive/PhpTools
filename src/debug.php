@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.03.17.01
+//2022.04.21.00
 
 function HandlerError(
   int $errno,
@@ -76,7 +76,10 @@ function DebugTrace():void{
   endif;
   $trace = debug_backtrace();
   $temp = '#' . $DebugTraceCount++ . ' ';
-  $temp .= date('Y-m-d H:i:s ') . microtime() . "\n";
+  $temp .= date('Y-m-d H:i:s ') . microtime(true) . "\n";
+  $temp .= 'Memory: ' . number_format(memory_get_usage()) . ' ';
+  $temp .= 'Limit: ' . ini_get('memory_limit') . ' ';
+  $temp .= 'Peak: ' . number_format(memory_get_peak_usage()) . "\n";
   $temp .= $trace[1]['function'];
   $temp .= ' in ' . ($trace[1]['file'] ?? 'unknown');
   $temp .= ' line ' . ($trace[1]['line'] ?? 'unknown') . "\n";
