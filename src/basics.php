@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.05.20.00
+//2022.05.20.01
 
 enum DiaSemana:int{
   case Domingo = 0;
@@ -65,6 +65,18 @@ function FloatInt(string $Val):int{
   $Val = str_replace(',', '.', $Val);
   $Val = number_format($Val, 2, '.', '');
   return str_replace('.', '', $Val);
+}
+
+function GlobRecursive(string $Dir, int $Flags = 0){
+  $files = [];
+  foreach(glob($Dir . '/*', $Flags) as $file):
+    if(is_dir($file)):
+      $files[] = GlobRecursive($file, $Flags);
+    else:
+      $files[] = $file;
+    endif;
+  endforeach;
+  return $files;
 }
 
 function HashDir(string $Algo, string $Dir):array{
