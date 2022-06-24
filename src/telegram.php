@@ -1,9 +1,10 @@
 <?php
-//2022.04.19.00
+//2022.06.07.00
 
 function TelegramSignCheck(string $Token, array $Data):bool{
-  if(isset($Data['username'])
-  and $Data['username'] === 'undefined'):
+  $Data['username'] ??= 'undefined';
+  $Data['last_name'] ??= 'undefined';
+  if($Data['username'] === 'undefined'):
     unset($Data['username']);
   endif;
   if($Data['last_name'] === 'undefined'):
