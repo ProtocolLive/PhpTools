@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.07.16.01
+//2022.07.16.02
 
 function HandlerError(
   int $errno,
@@ -56,6 +56,9 @@ function vd(mixed $v):void{
     echo '</textarea></option></select><pre>';
   endif;
   echo date('H:i:s') . " Variable debug:\n";
+  if(is_string($v)):
+    $v = str_replace('<', '&lt;', $v);
+  endif;
   var_dump($v);
   echo "Backtrace:\n";
   debug_print_backtrace();
