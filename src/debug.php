@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.07.16.00
+//2022.07.16.01
 
 function HandlerError(
   int $errno,
@@ -26,6 +26,7 @@ function HandlerError(
   endif;
   error_log(ob_get_contents());
   ob_end_clean();
+  die();
 }
 
 function HandlerException($Exception):void{
@@ -46,6 +47,7 @@ function HandlerException($Exception):void{
   endif;
   error_log(ob_get_contents());
   ob_end_clean();
+  die();
 }
 
 function vd(mixed $v):void{
