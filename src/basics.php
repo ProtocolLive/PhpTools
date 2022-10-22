@@ -1,16 +1,16 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.06.03.00
+//2022.10.21.00
 
 enum DiaSemana:int{
-  case Domingo = 7;
+  case Domingo = 0;
   case Segunda = 1;
   case Terca = 2;
-  case Quarta = 3;
-  case Quinta = 4;
-  case Sexta = 5;
-  case Sabado = 6;
+  case Quarta = 4;
+  case Quinta = 5;
+  case Sexta = 6;
+  case Sabado = 7;
 }
 
 function AccentInsensitive(string $Text):string{
