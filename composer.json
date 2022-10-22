@@ -12,5 +12,12 @@
             "email": "protocollive@outlook.com",
             "role": "Developer"
         }
-    ]
+    ],
+    "autoload": {
+        "files": [
+            "src/basics.php",
+            "src/debug.php",
+            "src/telegram.php"
+        ]
+    }
 }
