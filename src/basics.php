@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.10.21.01
+//2022.10.21.02
 
 enum DiaSemana:int{
   case Domingo = 0;
@@ -71,9 +71,9 @@ function FloatInt(string $Val):int{
   return str_replace('.', '', $Val);
 }
 
-function GlobRecursive(string $Dir, int $Flags = 0){
+function GlobRecursive(string $Dir, int $Flags = 0):array{
   $files = [];
-  foreach(glob($Dir . '/*', $Flags) as $file):
+  foreach(glob($Dir . '\*', $Flags) as $file):
     if(is_dir($file)):
       $files = array_merge($files, GlobRecursive($file, $Flags));
     else:
