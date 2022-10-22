@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.10.21.02
+//2022.10.21.03
 
 enum DiaSemana:int{
   case Domingo = 0;
@@ -40,7 +40,10 @@ function BlankNull(string $Var):string|null{
 /**
  * date and strtotime union
  */
-function Dates(string $Format, string|int $Date = null):string{
+function Dates(
+  string $Format,
+  string|int $Date = null
+):string{
   if(is_string($Date)):
     $Date = strtotime($Date);
   endif;
@@ -107,7 +110,11 @@ function Number(int $N, int $Precision):string{
   return $temp->format($N);
 }
 
-function PrintIfSet(mixed &$Var, string $Content = null, string $Else = null):void{
+function PrintIfSet(
+  mixed &$Var,
+  string $Content = null,
+  string $Else = null
+):void{
   if(isset($Var) and $Var !== null):
     if($Content === null):
       print $Var;
