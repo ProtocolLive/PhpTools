@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.10.21.04
+//2022.10.21.05
 
 enum DiaSemana:int{
   case Domingo = 0;
@@ -39,10 +39,18 @@ function BlankNull(string $Var):string|null{
 
 /**
  * Cross-site request forgery token generation
+ * @param string $Token Inform a token to perform a validation
+ * @return string|bool Return the token if $Token is null or bool otherwise
  */
-function Csrf():string{
-  $_SESSION['Csrf'] = sha1(uniqid());
-  return $_SESSION['Csrf'];
+function Csrf(
+  string $Token = null
+):string|bool{
+  if($Token === null):
+    $_SESSION['Csrf'] = sha1(uniqid());
+    return $_SESSION['Csrf'];
+  else:
+    return $Token === $_SESSION['Csrf'];
+  endif;
 }
 
 /**
