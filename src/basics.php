@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.10.27.00
+//2022.10.27.01
 
 enum DiaSemana:int{
   case Domingo = 7;
@@ -49,7 +49,7 @@ function Csrf(
     $_SESSION['Csrf'] = sha1(uniqid());
     return $_SESSION['Csrf'];
   else:
-    return $Token === $_SESSION['Csrf'];
+    return $Token === ($_SESSION['Csrf'] ?? null);
   endif;
 }
 
