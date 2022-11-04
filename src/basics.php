@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.11.02.00
+//2022.11.04.00
 
 enum DiaSemana:int{
   case Domingo = 7;
@@ -33,7 +33,9 @@ function ArrayDefrag(array &$Array):void{
   $Array = array_values($Array);
 }
 
-function BlankNull(string $Var):string|null{
+function BlankNull(
+  string|null $Var
+):string|null{
   return empty($Var) ? null : $Var;
 }
 
