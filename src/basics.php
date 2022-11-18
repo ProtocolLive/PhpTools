@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.11.11.00
+//2022.11.18.00
 
 enum DiaSemana:int{
   case Domingo = 7;
@@ -92,6 +92,7 @@ function Equals(string $Text1, string $Text2):bool{
 
 function FloatInt(string $Val):int{
   $Val = str_replace(',', '.', $Val);
+  $Val = floatval($Val);
   $Val = number_format($Val, 2, '.', '');
   return str_replace('.', '', $Val);
 }
