@@ -1,19 +1,11 @@
 <?php
-//2022.06.24.00
+//2022.12.21.00
 
 function TelegramSignCheck(
   string $Token,
   array $Data,
   int $TimeoutMinutes = 5
 ):bool{
-  $Data['username'] ??= 'undefined';
-  $Data['last_name'] ??= 'undefined';
-  if($Data['username'] === 'undefined'):
-    unset($Data['username']);
-  endif;
-  if($Data['last_name'] === 'undefined'):
-    unset($Data['last_name']);
-  endif;
   $HashSended = $Data['hash'];
   unset($Data['hash']);
   $array = [];

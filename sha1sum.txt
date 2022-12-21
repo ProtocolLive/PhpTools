@@ -1,5 +1,0 @@
-9a3e096e48b56a3d145dc0800819065fa2499feb  composer.json
-d01d8d285299a72e661d5c406e4bbb0913fbf995  src\basics.php
-ed3f0dc736fb3b713adb23bdf7e8f317c9bb6a15  src\debug.php
-67d7d4887fd55a36c3c5cf93da7c01e03224b4a8  src\sha1sum.txt
-4549b09dda55d89b7191219ac54be74f9b266d43  src\telegram.php

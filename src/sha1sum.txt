@@ -1,3 +1,3 @@
-64a5b3a6e2722ae6ee2be82df945668c9c600ba9  basics.php
+d01d8d285299a72e661d5c406e4bbb0913fbf995  basics.php
 ed3f0dc736fb3b713adb23bdf7e8f317c9bb6a15  debug.php
-4549b09dda55d89b7191219ac54be74f9b266d43  telegram.php
+55972b2cc6f9a2de570dcd74b1ee91a5793c811b  telegram.php
