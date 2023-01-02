@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.11.18.00
+//2023.01.02.00
 
 enum DiaSemana:int{
   case Domingo = 7;
@@ -13,7 +13,14 @@ enum DiaSemana:int{
   case Sabado = 6;
 }
 
-function AccentInsensitive(string $Text):string{
+enum Eol:string{
+  case Crlf = "\r\n";
+  case Lf = "\n";
+}
+
+function AccentInsensitive(
+  string $Text
+):string{
   return iconv('utf-8', 'ascii//TRANSLIT', $Text);
 }
 
@@ -29,7 +36,9 @@ function ArgV():void{
   endif;
 }
 
-function ArrayDefrag(array &$Array):void{
+function ArrayDefrag(
+  array &$Array
+):void{
   $Array = array_values($Array);
 }
 
@@ -72,6 +81,16 @@ function Dates(
   return date($Format, $Date);
 }
 
+function DetectEol(
+  string $Text
+):Eol{
+  if(strpos($Text, Eol::Crlf->value) === false):
+    return Eol::Lf;
+  else:
+    return Eol::Crlf;
+  endif;
+}
+
 function DirCreate(
   string $Dir,
   int $Perm = 0755,
@@ -84,20 +103,38 @@ function DirCreate(
   endif;
 }
 
-function Equals(string $Text1, string $Text2):bool{
+function Equals(
+  string $Text1,
+  string $Text2
+):bool{
   $Text1 = AccentInsensitive($Text1);
   $Text2 = AccentInsensitive($Text2);
   return strcasecmp($Text1, $Text2) === 0;
 }
 
-function FloatInt(string $Val):int{
+function ExplodeLines(
+  string $Text
+):array{
+  if(DetectEol($Text) === Eol::Lf):
+    return explode(Eol::Lf->value, $Text);
+  else:
+    return explode(Eol::Crlf->value, $Text);
+  endif;
+}
+
+function FloatInt(
+  string $Val
+):int{
   $Val = str_replace(',', '.', $Val);
   $Val = floatval($Val);
   $Val = number_format($Val, 2, '.', '');
   return str_replace('.', '', $Val);
 }
 
-function GlobRecursive(string $Dir, int $Flags = 0):array{
+function GlobRecursive(
+  string $Dir,
+  int $Flags = 0
+):array{
   $files = [];
   foreach(glob($Dir . '\*', $Flags) as $file):
     if(is_dir($file)):
@@ -109,7 +146,10 @@ function GlobRecursive(string $Dir, int $Flags = 0):array{
   return $files;
 }
 
-function HashDir(string $Algo, string $Dir):array{
+function HashDir(
+  string $Algo,
+  string $Dir
+):array{
   $hash = [];
   foreach(glob($Dir . '/*') as $file):
     if(is_dir($file)):
@@ -121,13 +161,18 @@ function HashDir(string $Algo, string $Dir):array{
   return $hash;
 }
 
-function Money(int $Val = 0):string{
+function Money(
+  int $Val = 0
+):string{
   $Val /= 100;
   $obj = numfmt_create('pt-br', NumberFormatter::CURRENCY);
   return numfmt_format_currency($obj, $Val, 'BRL');
 }
 
-function Number(int $N, int $Precision):string{
+function Number(
+  int $N,
+  int $Precision
+):string{
   $temp = new NumberFormatter('pt-br', NumberFormatter::DECIMAL);
   $temp->setAttribute(NumberFormatter::MIN_FRACTION_DIGITS, $Precision);
   return $temp->format($N);
@@ -149,7 +194,9 @@ function PrintIfSet(
   endif;
 }
 
-function Pkcs1ToX509(string $Key):string|false{
+function Pkcs1ToX509(
+  string $Key
+):string|false{
   $lines = explode(PHP_EOL, $Key);
   if($lines[0] !== '-----BEGIN RSA PUBLIC KEY-----'):
     return false;
