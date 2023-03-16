@@ -1,24 +1,25 @@
 {
-    "name": "protocollive/funcoescomuns",
-    "description": "Funções nativas melhoradas ou novas funções de uso rotineiro",
-    "type": "library",
-    "require": {
-        "php": ">=8.1",
-        "ext-intl": "*"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Fabio Carpi",
-            "email": "protocollive@outlook.com",
-            "role": "Developer"
-        }
-    ],
-    "autoload": {
-        "files": [
-            "src/basics.php",
-            "src/debug.php",
-            "src/telegram.php"
-        ]
+  "name": "protocollive/funcoescomuns",
+  "description": "Funções nativas melhoradas ou novas funções de uso rotineiro",
+  "type": "library",
+  "require": {
+    "php": ">=8.1",
+    "ext-intl": "*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fabio Carpi",
+      "email": "protocollive@outlook.com",
+      "role": "Developer"
     }
+  ],
+  "autoload": {
+    "files": [
+      "src/basics.php",
+      "src/debug.php",
+      "src/telegram.php",
+      "src/Enum/FopenMode.php"
+    ]
+  }
 }
