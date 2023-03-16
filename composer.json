@@ -19,7 +19,8 @@
       "src/basics.php",
       "src/debug.php",
       "src/telegram.php",
-      "src/Enum/FopenMode.php"
+      "src/Enum/FopenMode.php",
+      "src/Enum/Weekday.php"
     ]
   }
 }

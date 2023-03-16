@@ -1,17 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.01.02.00
-
-enum DiaSemana:int{
-  case Domingo = 7;
-  case Segunda = 1;
-  case Terca = 2;
-  case Quarta = 3;
-  case Quinta = 4;
-  case Sexta = 5;
-  case Sabado = 6;
-}
+//2023.03.16.00
 
 enum Eol:string{
   case Crlf = "\r\n";
