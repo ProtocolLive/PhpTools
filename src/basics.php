@@ -1,12 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.03.16.00
-
-enum Eol:string{
-  case Crlf = "\r\n";
-  case Lf = "\n";
-}
+//2023.03.16.01
 
 function AccentInsensitive(
   string $Text
