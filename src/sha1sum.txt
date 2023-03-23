@@ -1,3 +1,9 @@
-67c48cee20e84ee1ab2634c70ab2781cf1a2bdc6  basics.php
+09febd31d03f730e0be43ff2845ca22165b86c3e  Enum\Eol.php
+1112a5fa4791d0e3837aa72ff4bfad37339fcbc1  Enum\FilterFrom.php
+aaa950bb7ab31ff293bdb6ca10a5bbe88a7b9386  Enum\FilterSanitize.php
+b637c72e3dc1a19c115b7579c21f177ed4147bca  Enum\FilterValidate.php
+04f9de9be3cb025c8881cb58ed51913802d1fdc1  Enum\FopenMode.php
+77d0a573db4ea93071e8058f0074497f08b22d43  Enum\Weekday.php
+70e84b378000de9cd209be8e1806124c029cbddc  basics.php
 ed3f0dc736fb3b713adb23bdf7e8f317c9bb6a15  debug.php
 55972b2cc6f9a2de570dcd74b1ee91a5793c811b  telegram.php
