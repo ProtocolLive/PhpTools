@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.03.16.02
+//2023.05.11.00
 
 function AccentInsensitive(
   string $Text
@@ -74,18 +74,6 @@ function DetectEol(
     return Eol::Lf;
   else:
     return Eol::Crlf;
-  endif;
-}
-
-function DirCreate(
-  string $Dir,
-  int $Perm = 0755,
-  bool $Recursive = true
-):bool{
-  if(is_dir($Dir)):
-    return false;
-  else:
-    return mkdir($Dir, $Perm, $Recursive);
   endif;
 }
 
