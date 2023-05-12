@@ -1,7 +1,21 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.11.00
+//2023.05.11.01
+
+function FilterInput(
+  FilterFrom $Type,
+  string $VarName,
+  FilterSanitize|FilterValidate $Filter = FILTER_DEFAULT,
+  array|int $Options = 0
+):mixed{
+  return filter_input(
+    $Type->value,
+    $VarName,
+    $Filter->value,
+    $Options
+  );
+}
 
 function MkDir(
   string $Directory,
