@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2022.07.16.04
+//2023.05.13.00
 
 function HandlerError(
   int $errno,
@@ -75,7 +75,7 @@ function vdd(mixed $v):never{
 $DebugTraceFolder = __DIR__;
 function DebugTrace():void{
   global $DebugTraceFolder;
-  if(DebugTrace === false):
+  if((DebugTrace ?? false) === false):
     return;
   endif;
   static $DebugTraceCount = 0;
