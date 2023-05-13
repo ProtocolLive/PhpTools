@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.11.02
+//2023.05.13.00
 
 /**
  * Gets a specific external variable by name and optionally filters it
@@ -33,7 +33,7 @@ function FilterInput(
  * @return bool Returns true on success or false on failure. Note: If the directory to be created already exists, that is considered an error and false will still be returned.
  * @link https://www.php.net/mkdir
  */
-function MkDir(
+function MkDir2(
   string $Directory,
   int $Permissions = 0755,
   bool $Recursive = true
