@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.13.01
+//2023.05.15.00
 
 function HandlerError(
   int $errno,
@@ -93,6 +93,6 @@ function DebugTrace():void{
     $temp .= json_encode($trace[1]['args'], JSON_PRETTY_PRINT) . "\n";
   endif;
   $temp .= "\n";
-  DirCreate($DebugTraceFolder);
+  MkDir2($DebugTraceFolder);
   file_put_contents($DebugTraceFolder . '/trace.log', $temp, FILE_APPEND);
 }
