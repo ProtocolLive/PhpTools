@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.11.00
+//2023.05.11.01
 
 function AccentInsensitive(
   string $Text
@@ -110,7 +110,7 @@ function GlobRecursive(
   int $Flags = 0
 ):array{
   $files = [];
-  foreach(glob($Dir . '\*', $Flags) as $file):
+  foreach(glob($Dir . '/*', $Flags) as $file):
     if(is_dir($file)):
       $files = array_merge($files, GlobRecursive($file, $Flags));
     else:
