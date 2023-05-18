@@ -1,5 +1,5 @@
 <?php
-//2023.05.17.00
+//2023.05.17.01
 
 /**
  * @link https://www.php.net/manual/en/function.fopen.php
@@ -24,7 +24,7 @@ enum FopenMode:string{
   /**
    * Open for reading and writing; place the file pointer at the end of the file. If the file does not exist, attempt to create it. In this mode, fseek() only affects the reading position, writes are always appended.
    */
-  case ReadWriteEndCreate = 'a';
+  case ReadWriteEndCreate = 'a+';
   /**
    * Create and open for reading and writing; otherwise it has the same behavior as 'x'.
    */
