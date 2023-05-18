@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.18.00
+//2023.05.18.01
 
 function AccentInsensitive(
   string $Text
@@ -200,9 +200,8 @@ function Pkcs1ToX509(
   $Key .= $exp;
   $Key = hex2bin($Key);
   $Key = base64_encode($Key);
-  $Key = str_split($Key, 64);
   $return = '-----BEGIN PUBLIC KEY-----' . PHP_EOL;
-  $return .= implode(PHP_EOL, $Key) . PHP_EOL;
+  $return .= chunk_split($Key, 64, PHP_EOL);
   $return .= '-----END PUBLIC KEY-----';
   return $return;
 }
