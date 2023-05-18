@@ -1,6 +1,9 @@
 <?php
-//2023.03.16.00
+//2023.05.17.00
 
+/**
+ * @link https://www.php.net/manual/en/function.fopen.php
+ */
 enum FopenMode:string{
   /**
    * Set close-on-exec flag on the opened file descriptor. Only available in PHP compiled on POSIX.1-2008 conform systems.
@@ -17,7 +20,7 @@ enum FopenMode:string{
   /**
    * Open for reading and writing; otherwise it has the same behavior as 'w'.
    */
-  case ReadWriteBeginTruncateCreate = 'w';
+  case ReadWriteBeginTruncateCreate = 'w+';
   /**
    * Open for reading and writing; place the file pointer at the end of the file. If the file does not exist, attempt to create it. In this mode, fseek() only affects the reading position, writes are always appended.
    */
