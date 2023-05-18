@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.11.01
+//2023.05.18.00
 
 function AccentInsensitive(
   string $Text
@@ -136,18 +136,21 @@ function HashDir(
 }
 
 function Money(
-  int $Val = 0
+  int $Val = 0,
+  string $Localization = 'pt-br',
+  string $Currency = 'BRL'
 ):string{
   $Val /= 100;
-  $obj = numfmt_create('pt-br', NumberFormatter::CURRENCY);
-  return numfmt_format_currency($obj, $Val, 'BRL');
+  $obj = numfmt_create($Localization, NumberFormatter::CURRENCY);
+  return numfmt_format_currency($obj, $Val, $Currency);
 }
 
 function Number(
   int $N,
-  int $Precision
+  int $Precision,
+  string $Localization = 'pt-br'
 ):string{
-  $temp = new NumberFormatter('pt-br', NumberFormatter::DECIMAL);
+  $temp = new NumberFormatter($Localization, NumberFormatter::DECIMAL);
   $temp->setAttribute(NumberFormatter::MIN_FRACTION_DIGITS, $Precision);
   return $temp->format($N);
 }
