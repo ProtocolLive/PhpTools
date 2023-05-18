@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.15.01
+//2023.05.17.00
 
 function HandlerError(
   int $errno,
@@ -9,66 +9,72 @@ function HandlerError(
   string $errfile = null,
   int $errline = null,
   array $errcontext = null
+):never{
+  DebugTrace();
+  if(PHP_SAPI !== 'cli'):
+    ob_start();
+    echo '"</textarea></option></select><pre>' . PHP_EOL;
+  endif;
+  echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
+  echo 'Error #' . $errno . ' - ' . $errstr . ' in ' . $errfile . ' (' . $errline . ')' . PHP_EOL;
+  debug_print_backtrace();
+  if(PHP_SAPI !== 'cli'):
+    echo '</pre>';
+  endif;
+  error_log(ob_get_contents());
+  if(ini_get('display_errors')
+  and PHP_SAPI !== 'cli'):
+    ob_end_flush();
+  endif;
+  die();
+}
+
+function HandlerException(
+  Throwable $Exception
 ):void{
   DebugTrace();
-  ob_start();
-  if(ini_get('html_errors')):
-    echo '</textarea></option></select><pre>';
+  if(PHP_SAPI !== 'cli'):
+    ob_start();
+    echo '"</textarea></option></select><pre>' . PHP_EOL;
   endif;
-  echo 'Error #' . $errno . ' - ' . $errstr . ' in ' . $errfile . ' (' . $errline . ')' . PHP_EOL;
-  echo 'Backtrace:' . PHP_EOL;
-  debug_print_backtrace();
-  echo '</pre>';
-  if(ini_get('display_errors')):
-    error_log(ob_get_contents());
-    ob_end_flush();
-    die();
-  endif;
-  error_log(ob_get_contents());
-  ob_end_clean();
-  die();
-}
-
-function HandlerException($Exception):void{
-  DebugTrace();
-  ob_start();
-  if(ini_get('html_errors')):
-    echo '</textarea></option></select><pre>';
-  endif;
-  echo 'Exception:' . PHP_EOL;
+  echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
+  echo 'Exception: ';
   var_dump($Exception);
-  echo 'Backtrace:' . PHP_EOL;
   debug_print_backtrace();
-  echo '</pre>';
-  if(ini_get('display_errors')):
-    error_log(ob_get_contents());
-    ob_end_flush();
-    die();
-  endif;
   error_log(ob_get_contents());
-  ob_end_clean();
+  if(ini_get('display_errors')
+  and PHP_SAPI !== 'cli'):
+    ob_end_flush();
+  endif;
   die();
 }
 
-function vd(mixed $v):void{
-  ob_start();
-  if(ini_get('html_errors')):
-    echo '</textarea></option></select><pre>';
+function vd(
+  mixed ...$values
+):void{
+  if(PHP_SAPI !== 'cli'):
+    ob_start();
+    echo '"</textarea></option></select><pre>' . PHP_EOL;
+    foreach($values as &$v):
+      if(is_string($v)):
+        $v = htmlentities($v);
+      endif;
+    endforeach;
   endif;
-  echo date('H:i:s') . ' Variable debug:' . PHP_EOL;
-  if(is_string($v)):
-    $v = str_replace('<', '&lt;', $v);
-  endif;
-  var_dump($v);
-  echo 'Backtrace:' . PHP_EOL;
+  echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
+  var_dump(...$values);
   debug_print_backtrace();
-  echo '</pre>';
-  error_log(ob_get_contents());
-  ob_end_flush();
+  if(PHP_SAPI !== 'cli'):
+    echo '</pre>';
+    error_log(ob_get_contents());
+    ob_end_flush();
+  endif;
 }
 
-function vdd(mixed $v):never{
-  vd($v);
+function vdd(
+  mixed ...$values
+):never{
+  vd(...$values);
   die();
 }
 
