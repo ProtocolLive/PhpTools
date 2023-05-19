@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.18.01
+//2023.05.19.00
 
 function AccentInsensitive(
   string $Text
@@ -94,6 +94,27 @@ function ExplodeLines(
   else:
     return explode(Eol::Crlf->value, $Text);
   endif;
+}
+
+/**
+ * Convert function to string
+ */
+function F2s(\Closure $Function):string{
+  $Function = new \ReflectionFunction($Function);
+  $return = '';
+  $temp = $Function->getNamespaceName();
+  if($temp !== ''):
+    $return = $temp . '\\';
+  endif;
+  $temp = $Function->getClosureScopeClass();
+  if($temp !== null):
+    $temp = $temp->getName();
+    if($temp !== ''):
+      $return .= $temp . '::';
+    endif;
+  endif;
+  $return .= $Function->getName();
+  return $return;
 }
 
 function FloatInt(
