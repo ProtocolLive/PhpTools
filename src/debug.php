@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.17.00
+//2023.05.21.00
 
 function HandlerError(
   int $errno,
@@ -11,20 +11,15 @@ function HandlerError(
   array $errcontext = null
 ):never{
   DebugTrace();
-  if(PHP_SAPI !== 'cli'):
-    ob_start();
-    echo '"</textarea></option></select><pre>' . PHP_EOL;
-  endif;
+  ob_start();
   echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
   echo 'Error #' . $errno . ' - ' . $errstr . ' in ' . $errfile . ' (' . $errline . ')' . PHP_EOL;
   debug_print_backtrace();
-  if(PHP_SAPI !== 'cli'):
-    echo '</pre>';
-  endif;
-  error_log(ob_get_contents());
-  if(ini_get('display_errors')
-  and PHP_SAPI !== 'cli'):
-    ob_end_flush();
+  $log = ob_get_contents();
+  ob_end_clean();
+  error_log($log);
+  if(PHP_SAPI !== 'cli' and ini_get('display_errors')):
+    echo '<pre>' . $log . '</pre>';
   endif;
   die();
 }
@@ -33,18 +28,16 @@ function HandlerException(
   Throwable $Exception
 ):void{
   DebugTrace();
-  if(PHP_SAPI !== 'cli'):
-    ob_start();
-    echo '"</textarea></option></select><pre>' . PHP_EOL;
-  endif;
+  ob_start();
   echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
   echo 'Exception: ';
   var_dump($Exception);
   debug_print_backtrace();
-  error_log(ob_get_contents());
-  if(ini_get('display_errors')
-  and PHP_SAPI !== 'cli'):
-    ob_end_flush();
+  $log = ob_get_contents();
+  ob_end_clean();
+  error_log($log);
+  if(PHP_SAPI !== 'cli' and ini_get('display_errors')):
+    echo '<pre>' . $log . '</pre>';
   endif;
   die();
 }
@@ -52,22 +45,21 @@ function HandlerException(
 function vd(
   mixed ...$values
 ):void{
-  if(PHP_SAPI !== 'cli'):
-    ob_start();
-    echo '"</textarea></option></select><pre>' . PHP_EOL;
-    foreach($values as &$v):
-      if(is_string($v)):
-        $v = htmlentities($v);
-      endif;
-    endforeach;
-  endif;
+  foreach($values as &$v):
+    if(is_string($v)):
+      $v = htmlentities($v);
+    endif;
+  endforeach;
+  ob_start();
   echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
   var_dump(...$values);
   debug_print_backtrace();
-  if(PHP_SAPI !== 'cli'):
-    echo '</pre>';
-    error_log(ob_get_contents());
-    ob_end_flush();
+  $log = ob_get_contents();
+  ob_end_clean();
+  if(PHP_SAPI === 'cli'):
+    error_log($log);
+  elseif(ini_get('display_errors')):
+    echo '<pre>' . $log . '</pre>';
   endif;
 }
 
