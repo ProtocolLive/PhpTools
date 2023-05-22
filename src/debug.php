@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.21.00
+//2023.05.22.00
 
 function HandlerError(
   int $errno,
@@ -56,9 +56,8 @@ function vd(
   debug_print_backtrace();
   $log = ob_get_contents();
   ob_end_clean();
-  if(PHP_SAPI === 'cli'):
-    error_log($log);
-  elseif(ini_get('display_errors')):
+  error_log($log);
+  if(PHP_SAPI !== 'cli' and ini_get('display_errors')):
     echo '<pre>' . $log . '</pre>';
   endif;
 }
