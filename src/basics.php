@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.19.00
+//2023.05.24.00
 
 function AccentInsensitive(
   string $Text
@@ -70,10 +70,10 @@ function Dates(
 function DetectEol(
   string $Text
 ):Eol{
-  if(strpos($Text, Eol::Crlf->value) === false):
-    return Eol::Lf;
-  else:
+  if(str_contains($Text, Eol::Crlf->value)):
     return Eol::Crlf;
+  else:
+    return Eol::Lf;
   endif;
 }
 
