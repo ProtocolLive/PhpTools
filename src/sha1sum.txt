@@ -4,7 +4,7 @@ aaa950bb7ab31ff293bdb6ca10a5bbe88a7b9386  Enum\FilterSanitize.php
 b637c72e3dc1a19c115b7579c21f177ed4147bca  Enum\FilterValidate.php
 5b362524ba52a4d0df71d7324b0ae773b228fec5  Enum\FopenMode.php
 77d0a573db4ea93071e8058f0074497f08b22d43  Enum\Weekday.php
-d0f124989bdcb1a4f43dd890e6d174f7bd13279e  basics.php
+69a3594386debd0837489942ee8d16ac5c3e0778  basics.php
 d6275a377765b3f3d6bbd26d5af8e82d72f0ba66  debug.php
 55972b2cc6f9a2de570dcd74b1ee91a5793c811b  telegram.php
 b2c03d61ae7f69e0c916b5ab3e0e5d2847eede88  upgrades.php
