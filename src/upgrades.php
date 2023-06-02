@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.05.13.00
+//2023.06.02.00
 
 /**
  * Gets a specific external variable by name and optionally filters it
@@ -14,13 +14,13 @@
 function FilterInput(
   FilterFrom $Type,
   string $VarName,
-  FilterSanitize|FilterValidate $Filter = FILTER_DEFAULT,
+  FilterSanitize|FilterValidate|int $Filter = FILTER_DEFAULT,
   array|int $Options = 0
 ):mixed{
   return filter_input(
     $Type->value,
     $VarName,
-    $Filter->value,
+    $Filter->value ?? $Filter,
     $Options
   );
 }
