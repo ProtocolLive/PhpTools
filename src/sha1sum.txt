@@ -5,7 +5,7 @@ d2f690537537d4191b5778ac5f1748639a8f5055  Enum\FilterFrom.php
 76439df5232c8fd5870144f576d81481ca77ee0e  Enum\FopenMode.php
 cf79990f0869750516d17fbd5c210ec80a279748  Enum\HttpCode.php
 1b1dbd8f589e04d143868833471ede1eeb1ca396  Enum\Weekday.php
-0f45734ea68f35f778ce02a236df4a11ce90072f  basics.php
+13ecec3b6c1e3379f8fe1e4001557a8fa711ad21  basics.php
 928bb3f599f08bf005c658208007762bccbfc7dc  debug.php
 610cccd47fbe1afb5ff248ba6329e0e2f8b5d4ab  telegram.php
 0b5b23b8d0f26ab5bf2c7b1e62e45e5430b8a2a0  upgrades.php
