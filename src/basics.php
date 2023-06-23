@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.06.23.00
+//2023.06.23.01
 
 function AccentInsensitive(
   string $Text
@@ -49,7 +49,8 @@ function Csrf(
     return '<input type="hidden" name="csrf" value="' . $_SESSION['Csrf'] . '">';
   endif;
   if($Check):
-    if(empty(FilterInput(FilterFrom::Post, 'csrf'))
+    if(isset($_SESSION['Csrf']) === false
+    or empty(FilterInput(FilterFrom::Post, 'csrf'))
     or strlen($_POST['csrf']) !== 40
     or ctype_xdigit($_POST['csrf']) === false):
       return false;
