@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.06.02.01
+//2023.06.23.00
 
 /**
  * Gets a specific external variable by name and optionally filters it
@@ -20,6 +20,26 @@ function FilterInput(
   return filter_input(
     $Type->value,
     $VarName,
+    $Filter->value ?? FILTER_DEFAULT,
+    $Options
+  );
+}
+
+/**
+ * Filters a variable with a specified filter
+ * @var mixed $Value Value to filter. Note that scalar values are converted to string internally before they are filtered.
+ * @var FilterSanitize|FilterValidate $Filter The ID of the filter to apply. The Types of filters manual page lists the available filters. If omitted, FILTER_DEFAULT will be used, which is equivalent to FILTER_UNSAFE_RAW. This will result in no filtering taking place by default.
+ * @var array|int $Options Associative array of options or bitwise disjunction of flags. If filter accepts options, flags can be provided in "flags" field of array. For the "callback" filter, callable type should be passed. The callback must accept one argument, the value to be filtered, and return the value after filtering/sanitizing it.
+ * @return mixed Returns the filtered data, or false if the filter fails.
+ * @link https://www.php.net/filter-var
+ */
+function FilterVar(
+  mixed $Value,
+  FilterSanitize|FilterValidate $Filter = null,
+  array|int $Options = 0
+):mixed{
+  return filter_var(
+    $Value,
     $Filter->value ?? FILTER_DEFAULT,
     $Options
   );
