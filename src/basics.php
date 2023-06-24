@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.06.23.01
+//2023.06.23.02
 
 function AccentInsensitive(
   string $Text
@@ -49,10 +49,14 @@ function Csrf(
     return '<input type="hidden" name="csrf" value="' . $_SESSION['Csrf'] . '">';
   endif;
   if($Check):
-    if(isset($_SESSION['Csrf']) === false
-    or empty(FilterInput(FilterFrom::Post, 'csrf'))
-    or strlen($_POST['csrf']) !== 40
-    or ctype_xdigit($_POST['csrf']) === false):
+    if(isset($_SESSION['Csrf']) === false):
+      error_log('CSRF token not created');
+      return false;
+    endif;
+    if(empty(FilterInput(FilterFrom::Post, 'csrf', FilterValidate::Regex, [
+      'options' => [ 'regexp' => '/\b[0-9a-fA-F]{40,40}\b/']
+    ]))):
+      error_log('CSRF token not valid');
       return false;
     endif;
     $temp = $_SESSION['Csrf'];
