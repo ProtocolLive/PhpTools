@@ -1,12 +1,13 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.06.23.02
+//2023.08.03.00
 
 function AccentInsensitive(
   string $Text
 ):string{
-  return iconv('utf-8', 'ascii//TRANSLIT', $Text);
+  $Text = Normalizer::normalize($Text, Normalizer::NFD);
+  return preg_replace('/[\x{0300}-\x{036F}]/u', '', $Text);;
 }
 
 function ArgV():void{
