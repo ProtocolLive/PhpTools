@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.08.03.00
+//2023.09.01.00
 
 function AccentInsensitive(
   string $Text
@@ -25,8 +25,8 @@ function ArgV():void{
 
 function ArrayDefrag(
   array &$Array
-):void{
-  $Array = array_values($Array);
+):array{
+  return $Array = array_values($Array);
 }
 
 function BlankNull(
