@@ -1,7 +1,20 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.06.23.00
+//2023.09.11.00
+
+/**
+ * date and strtotime union
+ */
+function Dates(
+  string $Format,
+  string|int $Date = null
+):string{
+  if(is_string($Date)):
+    $Date = strtotime($Date);
+  endif;
+  return date($Format, $Date);
+}
 
 /**
  * Gets a specific external variable by name and optionally filters it

@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.09.01.00
+//2023.09.11.00
 
 function AccentInsensitive(
   string $Text
@@ -65,19 +65,6 @@ function Csrf(
     return $_POST['csrf'] === $temp;
   endif;
   return false;
-}
-
-/**
- * date and strtotime union
- */
-function Dates(
-  string $Format,
-  string|int $Date = null
-):string{
-  if(is_string($Date)):
-    $Date = strtotime($Date);
-  endif;
-  return date($Format, $Date);
 }
 
 function DetectEol(
