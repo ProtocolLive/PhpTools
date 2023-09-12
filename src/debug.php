@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.09.06.00
+//2023.09.11.00
 
 function Handler(
   mixed ...$Args
@@ -35,11 +35,6 @@ function Handler(
 function vd(
   mixed ...$values
 ):void{
-  foreach($values as &$v):
-    if(is_string($v)):
-      $v = htmlentities($v);
-    endif;
-  endforeach;
   ob_start();
   echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
   var_dump(...$values);
@@ -48,7 +43,7 @@ function vd(
   ob_end_clean();
   error_log($log);
   if(PHP_SAPI !== 'cli' and ini_get('display_errors')):
-    echo '<pre style="text-align:left">' . $log . '</pre>';
+    echo '<pre style="text-align:left">' . htmlentities($log) . '</pre>';
   endif;
 }
 
