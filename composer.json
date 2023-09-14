@@ -20,6 +20,7 @@
       "src/debug.php",
       "src/telegram.php",
       "src/upgrades.php",
+      "src/Enum/DateType.php",
       "src/Enum/Eol.php",
       "src/Enum/FilterFrom.php",
       "src/Enum/FilterSanitize.php",
