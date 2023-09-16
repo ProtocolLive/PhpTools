@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.09.14.00
+//2023.09.16.00
 
 function AccentInsensitive(
   string $Text
@@ -225,6 +225,15 @@ function Pkcs1ToX509(
   $return .= chunk_split($Key, 64, PHP_EOL);
   $return .= '-----END PUBLIC KEY-----';
   return $return;
+}
+
+function Std2Class(
+  stdClass $From,
+  object $To
+):void{
+  foreach($From as $Key => $Value):
+    $To->{$Key} = $Value;
+  endforeach;
 }
 
 function Uuid(
