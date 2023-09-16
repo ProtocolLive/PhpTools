@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.09.16.00
+//2023.09.16.01
 
 function AccentInsensitive(
   string $Text
@@ -14,13 +14,10 @@ function ArgV():void{
   if($_SERVER['argc'] === 0):
     return;
   endif;
-  unset($_SERVER['argv'][0]);
-  $temp = '';
-  foreach($_SERVER['argv'] as $param):
-    $temp .= $param . '&';
-  endforeach;
-  parse_str($temp, $_temp);
-  $_SERVER = array_merge($_SERVER, $_temp);
+  $temp = array_slice($_SERVER['argv'], 1);
+  $temp = implode('&', $temp);
+  parse_str($temp, $temp);
+  $_SERVER = array_merge($_SERVER, $temp);
 }
 
 function ArrayDefrag(
