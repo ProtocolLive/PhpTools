@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.09.16.01
+//2023.10.10.00
 
 function AccentInsensitive(
   string $Text
@@ -96,7 +96,9 @@ function ExplodeLines(
 /**
  * Convert function to string
  */
-function F2s(\Closure $Function):string{
+function F2s(
+  \Closure $Function
+):string{
   $Function = new \ReflectionFunction($Function);
   $return = '';
   $temp = $Function->getNamespaceName();
