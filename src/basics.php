@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.10.10.00
+//2023.10.17.00
 
 function AccentInsensitive(
   string $Text
@@ -156,7 +156,7 @@ function HashDir(
 }
 
 function Money(
-  int $Val = 0,
+  int|null $Val = 0,
   string $Localization = 'pt-br',
   string $Currency = 'BRL'
 ):string{
