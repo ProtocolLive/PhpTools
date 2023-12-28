@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.09.11.01
+//2023.12.28.00
 
 /**
  * date and strtotime union
@@ -17,7 +17,9 @@ function Dates(
 }
 
 /**
- * Use Dates with date parts as arguments using the enum DateType. The last non enum argument must be the $Data. See Dates for more information
+ * Use Dates with date parts as arguments using the enum DateType. See Dates for more information
+ * @param string $Separator Use blank string to get data part
+ * @param mixed ...$Args The last non DateType instance argument must be the $Data
  */
 function DatesEnum(
   string $Separator,
