@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.09.12.00
+//2023.12.31.00
 
 function Handler(
   mixed ...$Args
@@ -32,9 +32,12 @@ function Handler(
   die();
 }
 
+/**
+ * @return mixed The first parameter
+ */
 function vd(
   mixed ...$values
-):void{
+):mixed{
   ob_start();
   echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
   var_dump(...$values);
@@ -45,6 +48,7 @@ function vd(
   if(PHP_SAPI !== 'cli' and ini_get('display_errors')):
     echo '<pre style="text-align:left;white-space:pre-wrap">' . htmlentities($log) . '</pre>';
   endif;
+  return $values[0];
 }
 
 function vdd(

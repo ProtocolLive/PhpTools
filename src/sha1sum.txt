@@ -7,6 +7,6 @@ d2f690537537d4191b5778ac5f1748639a8f5055  Enum\FilterFrom.php
 cf79990f0869750516d17fbd5c210ec80a279748  Enum\HttpCode.php
 1b1dbd8f589e04d143868833471ede1eeb1ca396  Enum\Weekday.php
 7c332e9daed09a2bb56b155a8178b450f892220a  basics.php
-0d0edb2e808ce0a9f5630e4ccd83c67e0a57f834  debug.php
+976b9cbd8b7c7c426b894517a4d983339c1ea484  debug.php
 610cccd47fbe1afb5ff248ba6329e0e2f8b5d4ab  telegram.php
-ef7b30e2593ef5a7ee38dda9f327c81173baad69  upgrades.php
+9a1e4632fcc865a0e9d55526c90981bbdd033544  upgrades.php
