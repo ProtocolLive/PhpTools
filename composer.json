@@ -17,9 +17,12 @@
   "autoload": {
     "files": [
       "src/basics.php",
+      "src/Console.php",
       "src/debug.php",
       "src/telegram.php",
       "src/upgrades.php",
+      "src/Enum/ConsoleColorBg.php",
+      "src/Enum/ConsoleColorText.php",
       "src/Enum/DateType.php",
       "src/Enum/Eol.php",
       "src/Enum/FilterFrom.php",
