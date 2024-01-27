@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.12.28.00
+//2024.01.26.00
 
 /**
  * date and strtotime union
@@ -23,7 +23,7 @@ function Dates(
  */
 function DatesEnum(
   string $Separator,
-  ...$Args
+  mixed ...$Args
 ):string{
   $Args = func_get_args();
   array_shift($Args); //Remove the separator from array
