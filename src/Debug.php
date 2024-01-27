@@ -1,11 +1,11 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2023.12.31.00
+//2024.01.27.00
 
 function Handler(
   mixed ...$Args
-):void{
+):never{
   DebugTrace();
   ob_start();
   echo date('Y-m-d H:i:s') . ' ' . microtime(true) . PHP_EOL;
@@ -29,7 +29,7 @@ function Handler(
       echo '<pre style="text-align:left;white-space:pre-wrap">' . $log . '</pre>';
     endif;
   endif;
-  die();
+  exit(1);
 }
 
 /**
