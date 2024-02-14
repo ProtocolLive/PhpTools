@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.01.27.00
+//2024.02.13.00
 
 function Handler(
   mixed ...$Args
@@ -45,6 +45,10 @@ function vd(
   $log = ob_get_contents();
   ob_end_clean();
   error_log($log);
+  if(PHP_SAPI === 'cli'
+  and PHP_OS !== 'WINNT'):
+    echo $log;
+  endif;
   if(PHP_SAPI !== 'cli' and ini_get('display_errors')):
     echo '<pre style="text-align:left;white-space:pre-wrap">' . htmlentities($log) . '</pre>';
   endif;
