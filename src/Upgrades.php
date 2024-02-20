@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.01.26.00
+//2024.02.20.00
 
 /**
  * date and strtotime union
@@ -50,12 +50,45 @@ function FilterInput(
   FilterSanitize|FilterValidate $Filter = null,
   array|int $Options = 0
 ):mixed{
-  return filter_input(
+  $filter = $Filter;
+  if($filter === FilterValidate::IntPositive
+  or $filter === FilterValidate::Id
+  or $filter === FilterValidate::Day
+  or $filter === FilterValidate::Month):
+    $filter = FilterValidate::Int;
+  elseif($filter === FilterValidate::FloatPositive):
+    $filter = FilterValidate::Float;
+  endif;
+
+  $return = filter_input(
     $Type->value,
     $VarName,
-    $Filter->value ?? FILTER_DEFAULT,
+    $filter->value ?? FILTER_DEFAULT,
     $Options
   );
+
+  if($Filter === FilterValidate::Id
+  and $return <= 0):
+    return false;
+  endif;
+  if((
+    $Filter === FilterValidate::IntPositive
+    or $Filter === FilterValidate::FloatPositive)
+  and $return < 0):
+    return false;
+  endif;
+  if($Filter === FilterValidate::Day
+  and $return < 1
+  and $return > 31):
+    return false;
+  endif;
+  if($Filter === FilterValidate::Month
+  and $return < 1
+  and $return > 12):
+    return false;
+  endif;
+
+  return $return;
 }
 
 /**
@@ -71,11 +104,44 @@ function FilterVar(
   FilterSanitize|FilterValidate $Filter = null,
   array|int $Options = 0
 ):mixed{
-  return filter_var(
+  $filter = $Filter;
+  if($filter === FilterValidate::IntPositive
+  or $filter === FilterValidate::Id
+  or $filter === FilterValidate::Day
+  or $filter === FilterValidate::Month):
+    $filter = FilterValidate::Int;
+  elseif($filter === FilterValidate::FloatPositive):
+    $filter = FilterValidate::Float;
+  endif;
+
+  $return = filter_var(
     $Value,
-    $Filter->value ?? FILTER_DEFAULT,
+    $filter->value ?? FILTER_DEFAULT,
     $Options
   );
+
+  if($Filter === FilterValidate::Id
+  and $return <= 0):
+    return false;
+  endif;
+  if((
+    $Filter === FilterValidate::IntPositive
+    or $Filter === FilterValidate::FloatPositive)
+  and $return < 0):
+    return false;
+  endif;
+  if($Filter === FilterValidate::Day
+  and $return < 1
+  and $return > 31):
+    return false;
+  endif;
+  if($Filter === FilterValidate::Month
+  and $return < 1
+  and $return > 12):
+    return false;
+  endif;
+
+  return $return;
 }
 
 /**
