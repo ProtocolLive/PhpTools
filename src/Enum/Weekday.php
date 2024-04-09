@@ -1,8 +1,10 @@
 <?php
-//2023.03.16.00
 
+/**
+ * @version 2024.04.08.00
+ */
 enum Weekday:int{
-  case Sunday = 7;
+  case Sunday = 0;
   case Monday = 1;
   case Tuesday = 2;
   case Wednesday = 3;
