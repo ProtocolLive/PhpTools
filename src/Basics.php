@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.04.02.00
+//2024.04.10.00
 
 function AccentInsensitive(
   string $Text
@@ -162,7 +162,7 @@ function Money(
 ):string{
   return numfmt_format_currency(
     numfmt_create($Localization, NumberFormatter::CURRENCY),
-    is_int($Val) ? $Val / 100 : $Val,
+    str_contains($Val, '.') ? $Val : $Val / 100,
     $Currency
   );
 }
