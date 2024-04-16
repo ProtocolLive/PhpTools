@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.02.20.00
+//2024.04.16.00
 
 /**
  * date and strtotime union
@@ -48,7 +48,9 @@ function FilterInput(
   FilterFrom $Type,
   string $VarName,
   FilterSanitize|FilterValidate $Filter = null,
-  array|int $Options = 0
+  array|int $Options = 0,
+  bool $Trim = false,
+  bool $BlankNull = false
 ):mixed{
   $filter = $Filter;
   if($filter === FilterValidate::IntPositive
@@ -86,6 +88,13 @@ function FilterInput(
   and $return < 1
   and $return > 12):
     return false;
+  endif;
+
+  if($Trim):
+    $return = trim($return);
+  endif;
+  if($BlankNull):
+    $return = BlankNull($return);
   endif;
 
   return $return;
