@@ -1,5 +1,5 @@
 <?php
-//2022.12.21.00
+//2024.11.05.00
 
 function TelegramSignCheck(
   string $Token,
@@ -24,7 +24,11 @@ function TelegramSignCheck(
   endif;
 }
 
-function TelegramWebappCheck(string $Token, array $Data):bool{
+function TelegramWebappCheck(
+  string $Token,
+  array $Data,
+  int $TimeoutMinutes = 5
+):bool{
   $HashSended = $Data['hash'];
   unset($Data['hash']);
   $array = [];
@@ -36,7 +40,7 @@ function TelegramWebappCheck(string $Token, array $Data):bool{
   $Token = hash_hmac('sha256', $Token, 'WebAppData', true);
   $HashRight = hash_hmac('sha256', $array, $Token);
   if($HashSended !== $HashRight
-  or time() > strtotime('+5 minutes', $Data['auth_date'])):
+  or time() > strtotime('+' . $TimeoutMinutes . ' minutes', $Data['auth_date'])):
     return false;
   else:
     return true;
