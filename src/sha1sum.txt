@@ -11,5 +11,5 @@ b80a91f928205e35bb991e5cde8fc719243e3bab  Enum\FilterValidate.php
 76439df5232c8fd5870144f576d81481ca77ee0e  Enum\FopenMode.php
 cf79990f0869750516d17fbd5c210ec80a279748  Enum\HttpCode.php
 2a3478f8a1dd116a3331ef90dde35e6431db1fa6  Enum\Weekday.php
-610cccd47fbe1afb5ff248ba6329e0e2f8b5d4ab  Telegram.php
+ca70d134c6deda9169971b8a38ef782e00de2ec2  Telegram.php
 1629d1d9c9c2fefd8130eae286a2bde7545e314c  Upgrades.php
