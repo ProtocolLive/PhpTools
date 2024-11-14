@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.10.13.01
+//2024.11.14.00
 
 function AccentInsensitive(
   string $Text
@@ -64,6 +64,26 @@ function Csrf(
     return $session === $post;
   endif;
   return false;
+}
+
+/**
+ * Use Dates with date parts as arguments using the enum DateType. See Dates for more information
+ * @param string $Separator Use blank string to get data part
+ * @param mixed ...$Args The last non DateType instance argument must be the $Data
+ */
+function DatesEnum(
+  string $Separator,
+  mixed ...$Args
+):string{
+  $Args = func_get_args();
+  array_shift($Args); //Remove the separator from array
+  if($Args[count($Args) - 1] instanceof DateType === false):
+    $Date = array_pop($Args);
+  endif;
+  foreach($Args as &$arg):
+    $arg = $arg->value;
+  endforeach;
+  return Dates(implode($Separator, $Args), $Date ?? null);
 }
 
 function DetectEol(
@@ -155,6 +175,24 @@ function HashDir(
     endif;
   endforeach;
   return $hash;
+}
+
+function json_load(
+  string $filename,
+  bool $assoc = false,
+  int $depth = 512
+):object|array{
+  return json_decode(file_get_contents($filename), $assoc, $depth);
+}
+
+function json_save(
+  string $filename,
+  mixed $value,
+  int $flags = 0,
+  int $options = 0,
+  int $depth = 512
+):int{
+  return file_put_contents($filename, json_encode($value, $options, $depth), $flags);
 }
 
 function Money(

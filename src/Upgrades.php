@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.04.16.00
+//2024.11.14.00
 
 /**
  * date and strtotime union
@@ -14,26 +14,6 @@ function Dates(
     $Date = strtotime($Date);
   endif;
   return date($Format, $Date);
-}
-
-/**
- * Use Dates with date parts as arguments using the enum DateType. See Dates for more information
- * @param string $Separator Use blank string to get data part
- * @param mixed ...$Args The last non DateType instance argument must be the $Data
- */
-function DatesEnum(
-  string $Separator,
-  mixed ...$Args
-):string{
-  $Args = func_get_args();
-  array_shift($Args); //Remove the separator from array
-  if($Args[count($Args) - 1] instanceof DateType === false):
-    $Date = array_pop($Args);
-  endif;
-  foreach($Args as &$arg):
-    $arg = $arg->value;
-  endforeach;
-  return Dates(implode($Separator, $Args), $Date ?? null);
 }
 
 /**
