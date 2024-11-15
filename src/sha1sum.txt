@@ -1,4 +1,4 @@
-dec26811c4af67b71c349fa5abcfddb68b666057  Basics.php
+57cdbeb8deb4ecc1e5d08a070e2acf03196c9661  Basics.php
 ad081ef44319f9890eee3df5bc0f30a41a8d94b7  Console.php
 66f0f1236f4fb93cec0d96d145fbbb4b65e91020  Debug.php
 5eb3b77830a7abad81c0d62beadf28c6b05d40b0  Enum\ConsoleColorBg.php
@@ -12,4 +12,4 @@ b80a91f928205e35bb991e5cde8fc719243e3bab  Enum\FilterValidate.php
 cf79990f0869750516d17fbd5c210ec80a279748  Enum\HttpCode.php
 2a3478f8a1dd116a3331ef90dde35e6431db1fa6  Enum\Weekday.php
 ca70d134c6deda9169971b8a38ef782e00de2ec2  Telegram.php
-1629d1d9c9c2fefd8130eae286a2bde7545e314c  Upgrades.php
+f644ccdbdccd37b8599acdafd2fea181059292fa  Upgrades.php
