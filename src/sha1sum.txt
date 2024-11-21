@@ -1,5 +1,5 @@
-57cdbeb8deb4ecc1e5d08a070e2acf03196c9661  Basics.php
-ad081ef44319f9890eee3df5bc0f30a41a8d94b7  Console.php
+2cc9b935f0898ccba53563cc45beb47a0f6b42b0  Basics.php
+2820b556776a263eada15e947bd7d3b2fe756463  Console.php
 66f0f1236f4fb93cec0d96d145fbbb4b65e91020  Debug.php
 5eb3b77830a7abad81c0d62beadf28c6b05d40b0  Enum\ConsoleColorBg.php
 1ac1ba4dedc208ed9f072454a2468424a925bc6f  Enum\ConsoleColorText.php
@@ -12,4 +12,4 @@ b80a91f928205e35bb991e5cde8fc719243e3bab  Enum\FilterValidate.php
 cf79990f0869750516d17fbd5c210ec80a279748  Enum\HttpCode.php
 2a3478f8a1dd116a3331ef90dde35e6431db1fa6  Enum\Weekday.php
 ca70d134c6deda9169971b8a38ef782e00de2ec2  Telegram.php
-f644ccdbdccd37b8599acdafd2fea181059292fa  Upgrades.php
+21c119bb1518f82c5c0c51b4acb7a2e1f2319a5a  Upgrades.php
