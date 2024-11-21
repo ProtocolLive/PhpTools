@@ -1,12 +1,12 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.01.24.00
+//2024.11.21.00
 
 function ConsoleColor(
   string $Text,
   ConsoleColorText|ConsoleColorBg $Color1,
-  ConsoleColorBg $Color2 = null
+  ConsoleColorBg|null $Color2 = null
 ):string{
   $return = "\e[" . $Color1->value;
   if($Color2 !== null):

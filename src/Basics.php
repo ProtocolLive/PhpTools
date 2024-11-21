@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.11.14.00
+//2024.11.21.00
 
 function AccentInsensitive(
   string $Text
@@ -219,8 +219,8 @@ function Number(
 
 function PrintIfSet(
   mixed &$Var,
-  string $Content = null,
-  string $Else = null
+  string|null $Content = null,
+  string|null $Else = null
 ):void{
   if(isset($Var) and $Var !== null):
     if($Content === null):

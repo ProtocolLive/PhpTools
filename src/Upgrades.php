@@ -1,14 +1,14 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.11.14.00
+//2024.11.21.00
 
 /**
  * date and strtotime union
  */
 function Dates(
   string $Format,
-  string|int $Date = null
+  string|int|null $Date = null
 ):string{
   if(is_string($Date)):
     $Date = strtotime($Date);
@@ -27,7 +27,7 @@ function Dates(
 function FilterInput(
   FilterFrom $Type,
   string $VarName,
-  FilterSanitize|FilterValidate $Filter = null,
+  FilterSanitize|FilterValidate|null $Filter = null,
   array|int $Options = 0,
   bool $Trim = false,
   bool $BlankNull = false
@@ -90,7 +90,7 @@ function FilterInput(
  */
 function FilterVar(
   mixed $Value,
-  FilterSanitize|FilterValidate $Filter = null,
+  FilterSanitize|FilterValidate|null $Filter = null,
   array|int $Options = 0
 ):mixed{
   $filter = $Filter;
