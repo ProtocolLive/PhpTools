@@ -1,6 +1,6 @@
 {
-  "name": "protocollive/funcoescomuns",
-  "description": "Funções nativas melhoradas ou novas funções de uso rotineiro",
+  "name": "protocollive/phptools",
+  "description": "Improved native functions or news ones for daily use",
   "type": "library",
   "require": {
     "php": ">=8.1",
