@@ -1,4 +1,4 @@
-2cc9b935f0898ccba53563cc45beb47a0f6b42b0  Basics.php
+c3f3a0579cbc29efb1b1b1273bd63af02d7f8ff6  Basics.php
 2820b556776a263eada15e947bd7d3b2fe756463  Console.php
 66f0f1236f4fb93cec0d96d145fbbb4b65e91020  Debug.php
 5eb3b77830a7abad81c0d62beadf28c6b05d40b0  Enum\ConsoleColorBg.php
