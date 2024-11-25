@@ -31,6 +31,9 @@
       "src/Enum/FopenMode.php",
       "src/Enum/HttpCode.php",
       "src/Enum/Weekday.php"
-    ]
+    ],
+    "psr-4": {
+      "ProtocolLive\\PhpTools": "src/"
+    }
   }
 }
