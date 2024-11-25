@@ -33,7 +33,7 @@
       "src/Enum/Weekday.php"
     ],
     "psr-4": {
-      "ProtocolLive\\PhpTools": "src/"
+      "ProtocolLive\\PhpTools\\": "src/"
     }
   }
 }
