@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/FuncoesComuns
-//2024.11.21.00
+//2024.11.24.00
 
 function AccentInsensitive(
   string $Text
@@ -181,7 +181,7 @@ function json_load(
   string $filename,
   bool $assoc = false,
   int $depth = 512
-):object|array{
+):object|array|null{
   return json_decode(file_get_contents($filename), $assoc, $depth);
 }
 
