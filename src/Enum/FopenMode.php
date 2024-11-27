@@ -1,8 +1,10 @@
 <?php
-//2023.05.17.01
+//Protocol Corporation Ltda.
+//https://github.com/ProtocolLive/PhpTools
 
 /**
  * @link https://www.php.net/manual/en/function.fopen.php
+ * @version 2023.05.17.01
  */
 enum FopenMode:string{
   /**

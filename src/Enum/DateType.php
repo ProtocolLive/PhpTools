@@ -1,4 +1,6 @@
 <?php
+//Protocol Corporation Ltda.
+//https://github.com/ProtocolLive/PhpTools
 
 /**
  * @version 2023.09.11.00

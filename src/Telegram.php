@@ -1,4 +1,6 @@
 <?php
+//Protocol Corporation Ltda.
+//https://github.com/ProtocolLive/PhpTools
 //2024.11.05.00
 
 function TelegramSignCheck(

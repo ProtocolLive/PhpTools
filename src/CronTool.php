@@ -1,6 +1,6 @@
 <?php
 //Protocol Corporation Ltda.
-//https://github.com/ProtocolLive/SimpleTelegramBot
+//https://github.com/ProtocolLive/PhpTools
 
 namespace ProtocolLive\PhpTools;
 use Exception;

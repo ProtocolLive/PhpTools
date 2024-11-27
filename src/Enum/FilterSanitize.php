@@ -1,6 +1,6 @@
 <?php
 //Protocol Corporation Ltda.
-//https://github.com/ProtocolLive/FuncoesComuns
+//https://github.com/ProtocolLive/PhpTools
 
 /**
  * @link https://www.php.net/manual/en/filter.filters.sanitize.php

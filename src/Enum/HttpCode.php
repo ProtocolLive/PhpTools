@@ -1,6 +1,6 @@
 <?php
 //Protocol Corporation Ltda.
-//https://github.com/ProtocolLive/FuncoesComuns
+//https://github.com/ProtocolLive/PhpTools
 
 /**
  * @version 2023.05.31.00

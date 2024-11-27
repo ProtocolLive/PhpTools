@@ -1,8 +1,10 @@
 <?php
-//2023.03.23.00
+//Protocol Corporation Ltda.
+//https://github.com/ProtocolLive/PhpTools
 
 /**
  * @link https://www.php.net/manual/en/function.filter-input.php
+ * @version 2023.03.23.00
  */
 enum FilterFrom:int{
   case Cookie = INPUT_COOKIE;

@@ -1,6 +1,6 @@
 <?php
 //Protocol Corporation Ltda.
-//https://github.com/ProtocolLive/FuncoesComuns
+//https://github.com/ProtocolLive/PhpTools
 //2024.02.13.00
 
 function Handler(

@@ -1,6 +1,6 @@
 <?php
 //Protocol Corporation Ltda.
-//https://github.com/ProtocolLive/FuncoesComuns
+//https://github.com/ProtocolLive/PhpTools
 //2024.11.21.00
 
 function ConsoleColor(
