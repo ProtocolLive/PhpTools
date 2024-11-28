@@ -18,6 +18,7 @@
     "files": [
       "src/Basics.php",
       "src/Console.php",
+      "src/Crud.php",
       "src/Debug.php",
       "src/Telegram.php",
       "src/Upgrades.php",
