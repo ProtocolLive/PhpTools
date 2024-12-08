@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2024.11.21.00
+//2024.12.08.00
 
 function ConsoleColor(
   string $Text,
@@ -18,7 +18,8 @@ function ConsoleColor(
 
 function ConsolePause(
   string $Text = 'Press any key to continue...',
-  ConsoleColorText $Color = ConsoleColorText::Yellow
+  ConsoleColorText $Color = ConsoleColorText::Green
 ):void{
-  readline(ConsoleColor($Text, $Color));
+  echo ConsoleColor($Text, $Color);
+  readline();
 }
