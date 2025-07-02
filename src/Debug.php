@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2024.02.13.00
+//2025.07.01.00
 
 function Handler(
   mixed ...$Args
@@ -22,11 +22,12 @@ function Handler(
   $log = ob_get_contents();
   ob_end_clean();
   error_log($log);
-  if(ini_get('display_errors')):
-    if(PHP_SAPI === 'cli' or ini_get('html_errors') == false):
-      echo $log;
-    else:
+  if(ini_get('display_errors')
+  and PHP_SAPI !== 'cli'):
+    if(ini_get('html_errors')):
       echo '<pre style="text-align:left;white-space:pre-wrap">' . $log . '</pre>';
+    else:
+      echo $log;
     endif;
   endif;
   exit(1);
@@ -45,12 +46,13 @@ function vd(
   $log = ob_get_contents();
   ob_end_clean();
   error_log($log);
-  if(PHP_SAPI === 'cli'
-  and PHP_OS !== 'WINNT'):
-    echo $log;
-  endif;
-  if(PHP_SAPI !== 'cli' and ini_get('display_errors')):
-    echo '<pre style="text-align:left;white-space:pre-wrap">' . htmlentities($log) . '</pre>';
+  if(ini_get('display_errors')
+  and PHP_SAPI !== 'cli'):
+    if(ini_get('html_errors')):
+      echo '<pre style="text-align:left;white-space:pre-wrap">' . $log . '</pre>';
+    else:
+      echo $log;
+    endif;
   endif;
   return $values[0];
 }
