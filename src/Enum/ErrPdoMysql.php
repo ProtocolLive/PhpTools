@@ -3,9 +3,11 @@
 //https://github.com/ProtocolLive/PhpTools
 
 /**
- * @version 2024.11.26.00
+ * @version 2025.05.26.00
  */
 enum ErrPdoMysql:string{
-  case NotFoud = '42S02';
+  case ColumnNotFound = '42S22';
+  case IndexNotFound = 'HY000';
   case Permissions = '42000';
+  case TableNotFoud = '42S02';
 }
