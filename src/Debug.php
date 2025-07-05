@@ -1,7 +1,12 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2025.07.01.00
+//2025.07.05.00
+
+/*
+ * Notes:
+ * - error_log always dumps the log in screen in Windows terminal
+ */
 
 function Handler(
   mixed ...$Args
@@ -22,8 +27,11 @@ function Handler(
   $log = ob_get_contents();
   ob_end_clean();
   error_log($log);
-  if(ini_get('display_errors')
-  and PHP_SAPI !== 'cli'):
+  if(PHP_SAPI === 'cli'
+  and PHP_OS === 'Linux'):
+    echo $log;
+  endif;
+  if(ini_get('display_errors')):
     if(ini_get('html_errors')):
       echo '<pre style="text-align:left;white-space:pre-wrap">' . $log . '</pre>';
     else:
@@ -46,8 +54,11 @@ function vd(
   $log = ob_get_contents();
   ob_end_clean();
   error_log($log);
-  if(ini_get('display_errors')
-  and PHP_SAPI !== 'cli'):
+  if(PHP_SAPI === 'cli'
+  and PHP_OS === 'Linux'):
+    echo $log;
+  endif;
+  if(ini_get('display_errors')):
     if(ini_get('html_errors')):
       echo '<pre style="text-align:left;white-space:pre-wrap">' . $log . '</pre>';
     else:
