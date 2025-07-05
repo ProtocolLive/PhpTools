@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2024.11.05.00
+//2025.07.04.00
 
 function TelegramSignCheck(
   string $Token,
@@ -24,6 +24,15 @@ function TelegramSignCheck(
   else:
     return true;
   endif;
+}
+
+/**
+ * Remove HTML tags and count with multi-byte. Requires PHP extension mbstring
+ */
+function TelegramStrlen(
+  string $String
+):int{
+  return mb_strlen(strip_tags($String));
 }
 
 function TelegramWebappCheck(
