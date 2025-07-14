@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2024.11.24.00
+//2025.07.14.00
 
 function AccentInsensitive(
   string $Text
@@ -69,7 +69,7 @@ function Csrf(
 /**
  * Use Dates with date parts as arguments using the enum DateType. See Dates for more information
  * @param string $Separator Use blank string to get data part
- * @param mixed ...$Args The last non DateType instance argument must be the $Data
+ * @param DateType[] ...$Args The last non DateType instance argument must be the $Date
  */
 function DatesEnum(
   string $Separator,
