@@ -1,10 +1,10 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2024.11.21.00
+//2025.07.18.00
 
 /**
- * date and strtotime union
+ * Date and strtotime union
  */
 function Dates(
   string $Format,
@@ -14,6 +14,20 @@ function Dates(
     $Date = strtotime($Date);
   endif;
   return date($Format, $Date);
+}
+
+/**
+ * Add or subtract and format dates
+ */
+function DateMath(
+  string $Format,
+  string $Math,
+  string|int|null $Date = null
+):string{
+  if(is_string($Date)):
+    $Date = strtotime($Date);
+  endif;
+  return date($Format, strtotime($Math, $Date));
 }
 
 /**
