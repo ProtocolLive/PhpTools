@@ -1,8 +1,8 @@
-5908ce28d584aed1809df7b799fdfe06034a431a  Basics.php
+ed5db6132596156167b840d806e09fccf9d04a3b  Basics.php
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 fe05f0650053af13b6983a80bc09af4a6dce25c9  CronTool.php
 ffd26c04a5e6556cc76ccd79f2498d14947c7416  Crud.php
-ba7b6f1038c80570d0f44a5215f8aca5ad917968  Debug.php
+8934d28191dca6b7bd13351ac6dbfec0cd0b401b  Debug.php
 eb9a7de407213b6c754bdac111f97062c3bce67e  Enum\ConsoleColorBg.php
 4ff1624fdb084bf313f6353ec801c7030cc7c1cf  Enum\ConsoleColorText.php
 e40149d1084241bd08bf06d239486428ef5ef3a5  Enum\DateType.php
@@ -14,5 +14,5 @@ e23d0cc1227887e0a1d6cb990f499364c5cab2a8  Enum\FilterValidate.php
 cf138b6bc6709e2d93e0d25746288d1d70f4815d  Enum\FopenMode.php
 6544e416c282fab34ac605633abda7afc7577015  Enum\HttpCode.php
 10c4196aa10e19cfdde91f3ef4406a125f8f92e7  Enum\Weekday.php
-ff0706dbfa9b727b55d1f008033c98ee79bd170c  Telegram.php
-7d3268c7b8a537bd8439d69bc8ac1ae2b52d352c  Upgrades.php
+e107139887c2cef0f21e8387163bd97156c18265  Telegram.php
+39100d1b852a96d84499fb4a02c785f934627d05  Upgrades.php
