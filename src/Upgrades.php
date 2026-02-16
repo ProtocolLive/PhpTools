@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2025.07.18.00
+//2026.02.15.00
 
 /**
  * Date and strtotime union
@@ -165,4 +165,21 @@ function MkDir2(
   else:
     return mkdir($Directory, $Permissions, $Recursive);
   endif;
+}
+
+/**
+ * Strip whitespace (or other characters) from the beginning and end of a string
+ * @param string|null $String The string that will be trimmed.
+ * @param string $Characters Optionally, the stripped characters can also be specified using the charlist parameter. Simply list all characters that you want to be stripped. With .. you can specify a range of characters.
+ * @return string The trimmed string.
+ * @link https://php.net/manual/en/function.trim.php
+ */
+function Trim2(
+  string|null $String,
+  string $Characters = "\n\r\t\v\0"
+):string{
+  if($String === null):
+    $String = '';
+  endif;
+  return trim($String, $Characters);
 }
