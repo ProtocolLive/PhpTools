@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2025.07.14.00
+//2025.12.02.00
 
 function AccentInsensitive(
   string $Text
@@ -36,12 +36,12 @@ function BlankNull(
  * Cross-site request forgery token generation
  * @param bool $Check If for check the token sended
  * @param bool $Form Create the form element
- * @return string|bool If $Check is true, return bool for token check. If $Form is true, return the form element. False otherwise
+ * @return string|false If $Check is true, return bool for token check. If $Form is true, return the form element. False otherwise
  */
 function Csrf(
   bool $Check = false,
   bool $Form = false
-):string|bool{
+):string|false{
   if($Form):
     $_SESSION['Csrf'] = sha1(uniqid());
     return '<input type="hidden" name="csrf" value="' . $_SESSION['Csrf'] . '">';
