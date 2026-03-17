@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2025.07.05.00
+//2026.03.17.00
 
 /*
  * Notes:
@@ -53,10 +53,12 @@ function vd(
   debug_print_backtrace();
   $log = ob_get_contents();
   ob_end_clean();
-  error_log($log);
-  if(PHP_SAPI === 'cli'
-  and PHP_OS === 'Linux'):
-    echo $log;
+  error_log($log);//Windows print in terminal here
+  if(PHP_SAPI === 'cli'):
+    if(PHP_OS === 'Linux'):
+      echo $log;
+    endif;
+    return $values[0];
   endif;
   if(ini_get('display_errors')):
     if(ini_get('html_errors')):
