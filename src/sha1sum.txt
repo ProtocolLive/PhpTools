@@ -2,7 +2,7 @@
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 fe05f0650053af13b6983a80bc09af4a6dce25c9  CronTool.php
 ffd26c04a5e6556cc76ccd79f2498d14947c7416  Crud.php
-8934d28191dca6b7bd13351ac6dbfec0cd0b401b  Debug.php
+78a2447b30ac7464cd7e00644166373801c7ef53  Debug.php
 eb9a7de407213b6c754bdac111f97062c3bce67e  Enum\ConsoleColorBg.php
 4ff1624fdb084bf313f6353ec801c7030cc7c1cf  Enum\ConsoleColorText.php
 e40149d1084241bd08bf06d239486428ef5ef3a5  Enum\DateType.php
