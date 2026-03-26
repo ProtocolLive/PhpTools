@@ -1,4 +1,4 @@
-3c8dfff7b9c6734128c51ce711610ee3d1e51c97  Basics.php
+d41aecf6ec01895dcbed9a03e9db571437dd3b97  Basics.php
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 fe05f0650053af13b6983a80bc09af4a6dce25c9  CronTool.php
 ffd26c04a5e6556cc76ccd79f2498d14947c7416  Crud.php
@@ -13,6 +13,7 @@ c379bb272e92d132643a55988cd7562e9fce5660  Enum\FilterSanitize.php
 e23d0cc1227887e0a1d6cb990f499364c5cab2a8  Enum\FilterValidate.php
 cf138b6bc6709e2d93e0d25746288d1d70f4815d  Enum\FopenMode.php
 6544e416c282fab34ac605633abda7afc7577015  Enum\HttpCode.php
+2ef2b80c41d27bee7784989ebca219075f713812  Enum\Meses.php
 10c4196aa10e19cfdde91f3ef4406a125f8f92e7  Enum\Weekday.php
 311c320e9055b21379bfed310aad01f9d40bb16f  Telegram.php
 394fb111f328512f77d2f3dcb6ea8ff471edd73e  Upgrades.php
