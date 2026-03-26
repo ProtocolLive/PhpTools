@@ -1,4 +1,4 @@
-d41aecf6ec01895dcbed9a03e9db571437dd3b97  Basics.php
+d4fae9afcb9bf3f737ccf9a28f12e9f12593bf80  Basics.php
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 fe05f0650053af13b6983a80bc09af4a6dce25c9  CronTool.php
 ffd26c04a5e6556cc76ccd79f2498d14947c7416  Crud.php
