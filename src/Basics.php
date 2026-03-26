@@ -68,18 +68,14 @@ function Csrf(
 
 /**
  * Use Dates with date parts as arguments using the enum DateType. See Dates for more information
- * @param string $Separator Use blank string to get data part
- * @param DateType[] ...$Args The last non DateType instance argument must be the $Date
+ * @param mixed $Args DateType enum arguments
  */
 function DatesEnum(
-  string $Separator,
-  mixed ...$Args
+  string $Separator = '',
+  string|int|null $Date = null,
+  DateType|null ...$Args = null
 ):string{
   $Args = func_get_args();
-  array_shift($Args); //Remove the separator from array
-  if($Args[count($Args) - 1] instanceof DateType === false):
-    $Date = array_pop($Args);
-  endif;
   foreach($Args as &$arg):
     $arg = $arg->value;
   endforeach;
