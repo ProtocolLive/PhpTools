@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2025.12.02.00
+//2026.03.26.01
 
 function AccentInsensitive(
   string $Text
@@ -73,7 +73,7 @@ function Csrf(
 function DatesEnum(
   string $Separator = '',
   string|int|null $Date = null,
-  DateType|null ...$Args = null
+  DateType ...$Args
 ):string{
   $Args = func_get_args();
   foreach($Args as &$arg):
