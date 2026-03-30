@@ -32,6 +32,7 @@
       "src/Enum/FilterValidate.php",
       "src/Enum/FopenMode.php",
       "src/Enum/HttpCode.php",
+      "src/Enum/Meses.php",
       "src/Enum/Weekday.php"
     ],
     "psr-4": {
