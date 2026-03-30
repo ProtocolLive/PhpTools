@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.03.26.01
+//2026.03.29.00
 
 function AccentInsensitive(
   string $Text
@@ -67,6 +67,22 @@ function Csrf(
 }
 
 /**
+ * Add or subtract and format dates
+ * @param string|int $Date Default value: time(). The optional timestamp parameter is an integer Unix timestamp that defaults to the current local time if a timestamp is not given.
+ */
+function DateMath(
+  string $Math,
+  string|null $Format = '',
+  string|int|null $Date = null
+):string|int{
+  if(empty($Format)):
+    return date($Format, strtotime($Math, $Date));
+  else:
+    return strtotime($Math, $Date);
+  endif;
+}
+
+/**
  * Use Dates with date parts as arguments using the enum DateType. See Dates for more information
  * @param mixed $Args DateType enum arguments
  */
@@ -76,10 +92,12 @@ function DatesEnum(
   DateType ...$Args
 ):string{
   $Args = func_get_args();
+  array_shift($Args);
+  array_shift($Args);
   foreach($Args as &$arg):
     $arg = $arg->value;
   endforeach;
-  return Dates(implode($Separator, $Args), $Date ?? null);
+  return Dates(implode($Separator, $Args), $Date);
 }
 
 function DetectEol(

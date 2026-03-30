@@ -1,10 +1,11 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.02.15.00
+//2026.03.29.00
 
 /**
  * Date and strtotime union
+ * @param string|int $Date Default value: time(). The optional timestamp parameter is an integer Unix timestamp that defaults to the current local time if a timestamp is not given.
  */
 function Dates(
   string $Format,
@@ -14,20 +15,6 @@ function Dates(
     $Date = strtotime($Date);
   endif;
   return date($Format, $Date);
-}
-
-/**
- * Add or subtract and format dates
- */
-function DateMath(
-  string $Format,
-  string $Math,
-  string|int|null $Date = null
-):string{
-  if(is_string($Date)):
-    $Date = strtotime($Date);
-  endif;
-  return date($Format, strtotime($Math, $Date));
 }
 
 /**
