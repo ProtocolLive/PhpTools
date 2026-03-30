@@ -1,4 +1,4 @@
-d4fae9afcb9bf3f737ccf9a28f12e9f12593bf80  Basics.php
+e51348a1cdff558f95e89a0a41eaf9d529c62072  Basics.php
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 fe05f0650053af13b6983a80bc09af4a6dce25c9  CronTool.php
 ffd26c04a5e6556cc76ccd79f2498d14947c7416  Crud.php
@@ -16,4 +16,4 @@ cf138b6bc6709e2d93e0d25746288d1d70f4815d  Enum\FopenMode.php
 2ef2b80c41d27bee7784989ebca219075f713812  Enum\Meses.php
 10c4196aa10e19cfdde91f3ef4406a125f8f92e7  Enum\Weekday.php
 311c320e9055b21379bfed310aad01f9d40bb16f  Telegram.php
-394fb111f328512f77d2f3dcb6ea8ff471edd73e  Upgrades.php
+30fee6f1b5eb2839cb8aba300fb63aad79cea9f4  Upgrades.php
