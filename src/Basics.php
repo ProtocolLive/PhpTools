@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.03.29.00
+//2026.03.29.01
 
 function AccentInsensitive(
   string $Text
@@ -72,13 +72,13 @@ function Csrf(
  */
 function DateMath(
   string $Math,
-  string|null $Format = '',
+  string $Format = '',
   string|int|null $Date = null
 ):string|int{
   if(empty($Format)):
-    return date($Format, strtotime($Math, $Date));
-  else:
     return strtotime($Math, $Date);
+  else:
+    return date($Format, strtotime($Math, $Date));
   endif;
 }
 
