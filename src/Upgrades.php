@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.03.29.00
+//2026.04.01.00
 
 /**
  * Date and strtotime union
@@ -31,7 +31,8 @@ function FilterInput(
   FilterSanitize|FilterValidate|null $Filter = null,
   array|int $Options = 0,
   bool $Trim = false,
-  bool $BlankNull = false
+  bool $BlankNull = false,
+  bool $CommaToDot = false
 ):mixed{
   $filter = $Filter;
   if($filter === FilterValidate::IntPositive
@@ -43,12 +44,32 @@ function FilterInput(
     $filter = FilterValidate::Float;
   endif;
 
-  $return = filter_input(
-    $Type->value,
-    $VarName,
-    $filter->value ?? FILTER_DEFAULT,
-    $Options
-  );
+  if($CommaToDot):
+    if($Type === FilterFrom::Get):
+      $value = $_GET[$VarName];
+    elseif($Type === FilterFrom::Post):
+      $value = $_POST[$VarName];
+    elseif($Type === FilterFrom::Cookie):
+      $value = $_COOKIE[$VarName];
+    elseif($Type === FilterFrom::Server):
+      $value = $_SERVER[$VarName];
+    elseif($Type === FilterFrom::Env):
+      $value = $_ENV[$VarName];
+    endif;
+    $value = str_replace(',', '.', $value);
+    $return = filter_var(
+      $value,
+      $filter->value,
+      $Options
+    );
+  else:
+    $return = filter_input(
+      $Type->value,
+      $VarName,
+      $filter->value ?? FILTER_DEFAULT,
+      $Options
+    );
+  endif;
 
   if($Filter === FilterValidate::Id
   and $return <= 0):
