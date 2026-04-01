@@ -1,4 +1,4 @@
-e51348a1cdff558f95e89a0a41eaf9d529c62072  Basics.php
+98aae4bdb6475feaa6c552b543d637b1365c56e5  Basics.php
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 fe05f0650053af13b6983a80bc09af4a6dce25c9  CronTool.php
 ffd26c04a5e6556cc76ccd79f2498d14947c7416  Crud.php
@@ -7,7 +7,7 @@ eb9a7de407213b6c754bdac111f97062c3bce67e  Enum\ConsoleColorBg.php
 4ff1624fdb084bf313f6353ec801c7030cc7c1cf  Enum\ConsoleColorText.php
 e40149d1084241bd08bf06d239486428ef5ef3a5  Enum\DateType.php
 9ae13ccd4d55b0ec070d6d3881977e9e3f291870  Enum\Eol.php
-e17356c4124a24bb30f850ad2644883ebacefaf3  Enum\ErrPdoMysql.php
+093a7047eb31cab8ee0227a8add9ee73612df083  Enum\ErrPdoMysql.php
 b30b6456084b2d8f69f25f0eb8f33832f837cbe5  Enum\FilterFrom.php
 c379bb272e92d132643a55988cd7562e9fce5660  Enum\FilterSanitize.php
 e23d0cc1227887e0a1d6cb990f499364c5cab2a8  Enum\FilterValidate.php
