@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.03.29.01
+//2026.04.30.00
 
 function AccentInsensitive(
   string $Text
@@ -77,9 +77,11 @@ function DateMath(
 ):string|int{
   if(empty($Format)):
     return strtotime($Math, $Date);
-  else:
-    return date($Format, strtotime($Math, $Date));
   endif;
+  if(is_string($Date)):
+    $Date = strtotime($Date);
+  endif;
+  return date($Format, strtotime($Math, $Date));
 }
 
 /**
