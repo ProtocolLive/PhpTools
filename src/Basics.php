@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.04.30.00
+//2026.05.01.00
 
 function AccentInsensitive(
   string $Text
@@ -291,6 +291,17 @@ function Std2Class(
   foreach($From as $Key => $Value):
     $To->{$Key} = $Value;
   endforeach;
+}
+
+function StrInt(
+  string $Number
+):string{
+  $Map = ['p', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', '/' => 'm'];
+  $Number = strtolower($Number);
+  foreach($Map as $Key => $Value):
+    $Number = str_replace($Value, $Key, $Number);
+  endforeach;
+  return $Number;
 }
 
 function Uuid(
