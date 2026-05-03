@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.05.01.00
+//2026.05.03.00
 
 function AccentInsensitive(
   string $Text
@@ -86,16 +86,17 @@ function DateMath(
 
 /**
  * Use Dates with date parts as arguments using the enum DateType. See Dates for more information
- * @param mixed $Args DateType enum arguments
+ * @param DateType ...$Args DateType enum arguments
  */
 function DatesEnum(
   string $Separator = '',
   string|int|null $Date = null,
   DateType ...$Args
-):string{
-  $Args = func_get_args();
-  array_shift($Args);
-  array_shift($Args);
+):string|WeekDay{
+  if(empty($Separator)
+  and ($Args[0] ?? $Args['Args']) === DateType::Week):
+    return Weekday::from(date(DateType::Week->value, $Date));
+  endif;
   foreach($Args as &$arg):
     $arg = $arg->value;
   endforeach;
