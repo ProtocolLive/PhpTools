@@ -1,7 +1,27 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.05.04.00
+//2026.05.04.01
+
+function Jwt2Pem(
+  string $n,
+  string $e
+){
+  $n = base64url_decode($n);
+  $e = base64url_decode($e);
+  $EncodeLength = function ($length){
+    if($length <= 0x7F):
+      return chr($length);
+    endif;
+    $temp = ltrim(pack('N', $length), "\0");
+    return chr(0x80 | strlen($temp)) . $temp;
+  };
+  $nBin = "\x02" . $EncodeLength(strlen($n)) . $n;
+  $eBin = "\x02" . $EncodeLength(strlen($e)) . $e;
+  $sequence = "\x30" . $EncodeLength(strlen($nBin . $eBin)) . $nBin . $eBin;
+  $publicKeyInfo = "\x30" . $EncodeLength(strlen("\x30\x0d\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x01\x01\x05\x00\x03" . $EncodeLength(strlen($sequence) + 1) . "\x00" . $sequence)) . "\x30\x0d\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x01\x01\x05\x00\x03" . $EncodeLength(strlen($sequence) + 1) . "\x00" . $sequence;
+  return "-----BEGIN PUBLIC KEY-----\n" . chunk_split(base64_encode($publicKeyInfo), 64) . "-----END PUBLIC KEY-----";
+}
 
 function Pkcs1ToX509(
   string $Key
