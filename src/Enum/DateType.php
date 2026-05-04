@@ -3,7 +3,7 @@
 //https://github.com/ProtocolLive/PhpTools
 
 /**
- * @version 2023.09.11.00
+ * @version 2026.05.04.00
  * @link https://www.php.net/manual/en/datetime.format.php
  */
 enum DateType:string{
@@ -20,7 +20,7 @@ enum DateType:string{
    */
   case Date8601 = 'c';
   /**
-   * RFC 2822/RFC 5322 formatted date	Example: Thu, 21 Dec 2000 16:01:07 +0200
+   * RFC 2822/RFC 5322 formatted date. Example: Thu, 21 Dec 2000 16:01:07 +0200
    */
   case Date2822 = 'r';
   /**
@@ -32,7 +32,7 @@ enum DateType:string{
    */
   case DayLetter = 'D';
   /**
-   * Whether or not the date is in daylight saving time	1 if Daylight Saving Time, 0 otherwise.
+   * Whether or not the date is in daylight saving time. 1 if Daylight Saving Time, 0 otherwise.
    */
   case DayLightSaving = 'I';
   /**
@@ -40,11 +40,11 @@ enum DateType:string{
    */
   case DayNoZero = 'j';
   /**
-   * 	The day of the year (starting from 0): 0 through 365
+   * The day of the year (starting from 0): 0 through 365
    */
   case DayYear = 'z';
   /**
-   * 	Difference to Greenwich time (GMT) without colon between hours and minutes	Example: +0200
+   * Difference to Greenwich time (GMT) without colon between hours and minutes. Example: +0200
    */
   case GmtDiff = 'O';
   /**
@@ -76,7 +76,7 @@ enum DateType:string{
    */
   case HourNoZero = 'G';
   /**
-   * Minutes with leading zeros	00 to 59
+   * Minutes with leading zeros. 00 to 59
    */
   case Minutes = 'i';
   /**
@@ -84,15 +84,15 @@ enum DateType:string{
    */
   case Month = 'm';
   /**
-   * 	Number of days in the given month: 28 through 31
+   * Number of days in the given month: 28 through 31
    */
   case MonthDays = 't';
   /**
-   * 	A short textual representation of a month, three letters: Jan through Dec
+   * A short textual representation of a month, three letters: Jan through Dec
    */
   case MonthLetter = 'M';
   /**
-   * 	A short textual representation of a month, three letters	Jan through Dec
+   * Numeric representation of a month, without leading zeros
    */
   case MonthNoZero = 'n';
   /**
@@ -112,11 +112,11 @@ enum DateType:string{
    */
   case SecondsMilli = 'v';
   /**
-   * Swatch Internet time	000 through 999
+   * Swatch Internet time. 000 through 999
    */
   case Swatch = 'B';
   /**
-   * 	Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT)	See also time()
+   * Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT). See also time()
    */
   case Time = 'U';
   /**
@@ -140,7 +140,7 @@ enum DateType:string{
    */
   case WeekCount8601 = 'o';
   /**
-   * 	ISO 8601 week number of year, weeks starting on Monday: Example: 42 (the 42nd week in the year)
+   * ISO 8601 week number of year, weeks starting on Monday: Example: 42 (the 42nd week in the year)
    */
   case WeekCount = 'W';
   /**
