@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.05.04.00
+//2026.05.04.01
 
 function AccentInsensitive(
   string $Text
@@ -24,6 +24,12 @@ function ArrayDefrag(
   array &$Array
 ):array{
   return $Array = array_values($Array);
+}
+
+function base64url_decode(
+  string $Data
+):string{
+  return base64_decode(str_replace(['-', '_'], ['+', '/'], $Data));
 }
 
 function BlankNull(
