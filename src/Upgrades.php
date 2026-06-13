@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.04.01.00
+//2026.06.13.00
 
 /**
  * Date and strtotime union
@@ -153,6 +153,15 @@ function FilterVar(
   endif;
 
   return $return;
+}
+
+function JsonDecodeSelf(
+  string &$json,
+  bool|null $associative = null,
+  int $depth = 512,
+  int $flags = 0
+):void{
+  $json = json_decode($json, $associative, $depth, $flags);
 }
 
 /**
