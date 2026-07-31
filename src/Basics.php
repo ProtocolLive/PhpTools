@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.05.04.01
+//2026.07.31.00
 
 function AccentInsensitive(
   string $Text
@@ -11,7 +11,7 @@ function AccentInsensitive(
 }
 
 function ArgV():void{
-  if($_SERVER['argc'] === 0):
+  if($_SERVER['argc'] ?? 0 === 0):
     return;
   endif;
   $temp = array_slice($_SERVER['argv'], 1);
