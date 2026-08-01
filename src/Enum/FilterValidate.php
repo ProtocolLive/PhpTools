@@ -4,7 +4,7 @@
 
 /**
  * @link https://www.php.net/manual/en/filter.filters.validate.php
- * @version 2026.08.01.00
+ * @version 2026.08.01.01
  */
 enum FilterValidate:int{
   /**
@@ -19,8 +19,9 @@ enum FilterValidate:int{
   case Day = -4;
   /**
    * Alias of FILTER_UNSAFE_RAW.
+   * This filter does nothing. However, it can strip or encode special characters if used together with the FILTER_FLAG_STRIP_* and FILTER_FLAG_ENCODE_* filter sanitization flags.
    */
-  case Default = FILTER_DEFAULT;
+  case DefaultRaw = FILTER_DEFAULT;
   /**
    * Validates whether the domain name label lengths are valid.
    * Validates domain names against RFC 1034, RFC 1035, RFC 952, RFC 1123, RFC 2732, RFC 2181, and RFC 1123. Optional flag FILTER_FLAG_HOSTNAME adds ability to specifically validate hostnames (they must start with an alphanumeric character and contain only alphanumerics or hyphens).
@@ -69,10 +70,6 @@ enum FilterValidate:int{
    * Validates value against regexp, a Perl-compatible regular expression.
    */
   case Regex = FILTER_VALIDATE_REGEXP;
-  /**
-   * This filter does nothing. However, it can strip or encode special characters if used together with the FILTER_FLAG_STRIP_* and FILTER_FLAG_ENCODE_* filter sanitization flags.
-   */
-  case Raw = FILTER_UNSAFE_RAW;
   /**
    * Validates value as URL (according to » http://www.faqs.org/rfcs/rfc2396), optionally with required components. Beware a valid URL may not specify the HTTP protocol http:// so further validation may be required to determine the URL uses an expected protocol, e.g. ssh:// or mailto:. Note that the function will only find ASCII URLs to be valid; internationalized domain names (containing non-ASCII characters) will fail.
    */

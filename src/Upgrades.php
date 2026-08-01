@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.08.01.00
+//2026.08.01.01
 
 /**
  * Date and strtotime union
@@ -28,7 +28,7 @@ function Dates(
 function FilterInput(
   FilterFrom $Type,
   string $VarName,
-  FilterSanitize|FilterValidate $Filter = FilterValidate::Default,
+  FilterSanitize|FilterValidate $Filter = FilterValidate::DefaultRaw,
   array|int $Options = 0,
   bool $Trim = false,
   bool $BlankNull = false,
