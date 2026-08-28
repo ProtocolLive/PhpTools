@@ -1,4 +1,4 @@
-2c1d1b9e4ca8fcbface93891e097fcbdce0cd5ae  Basics.php
+f585823aa77eb4eab73564c3c357ffb6f866ff2c  Basics.php
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 84f45288ffd92ab3af28a1fa65eb5907ac14d741  Cripto.php
 fe05f0650053af13b6983a80bc09af4a6dce25c9  CronTool.php
@@ -8,14 +8,14 @@ eb9a7de407213b6c754bdac111f97062c3bce67e  Enum\ConsoleColorBg.php
 4ff1624fdb084bf313f6353ec801c7030cc7c1cf  Enum\ConsoleColorText.php
 a9cfc52fa16ea367986be42291af9c2c9959b082  Enum\DateType.php
 9ae13ccd4d55b0ec070d6d3881977e9e3f291870  Enum\Eol.php
-093a7047eb31cab8ee0227a8add9ee73612df083  Enum\ErrPdoMysql.php
+ac6af37bf7598e5b727b15f4f01acff335f21cdd  Enum\ErrPdoMysql.php
 b30b6456084b2d8f69f25f0eb8f33832f837cbe5  Enum\FilterFrom.php
 c379bb272e92d132643a55988cd7562e9fce5660  Enum\FilterSanitize.php
-e23d0cc1227887e0a1d6cb990f499364c5cab2a8  Enum\FilterValidate.php
+50c70d44d729c640bba0ccb37a9a6bb74f8f491c  Enum\FilterValidate.php
 cf138b6bc6709e2d93e0d25746288d1d70f4815d  Enum\FopenMode.php
 6544e416c282fab34ac605633abda7afc7577015  Enum\HttpCode.php
 2ef2b80c41d27bee7784989ebca219075f713812  Enum\Meses.php
 040c4aed5a82828c8b1c888f4ba6a016c49798ac  Enum\Semana.php
 10c4196aa10e19cfdde91f3ef4406a125f8f92e7  Enum\Weekday.php
 311c320e9055b21379bfed310aad01f9d40bb16f  Telegram.php
-459de5c9b79c92ce4f5e732a888997cc1c076f43  Upgrades.php
+adcd5e513bb771226ac3a90afec925d56f9d585f  Upgrades.php
