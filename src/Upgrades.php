@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.08.28.01
+//2026.08.28.02
 
 /**
  * Date and strtotime union
@@ -183,9 +183,8 @@ function MkDir2(
 ):bool{
   if(is_dir($Directory)):
     return false;
-  else:
-    return mkdir($Directory, $Permissions, $Recursive);
   endif;
+  return mkdir($Directory, $Permissions, $Recursive);
 }
 
 /**
