@@ -6,7 +6,7 @@ namespace ProtocolLive\PhpTools;
 use Exception;
 
 /**
- * @version 2024.11.23.00
+ * @version 2026.08.28.00
  */
 final class CronTool{
   private array $Jobs = [];
@@ -72,9 +72,8 @@ final class CronTool{
   ):array{
     if($Index === null):
       return $this->Jobs;
-    else:
-      return $this->Jobs[$Index];
     endif;
+    return $this->Jobs[$Index];
   }
 
   public function Save():void{

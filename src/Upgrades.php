@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.08.28.00
+//2026.08.28.01
 
 /**
  * Date and strtotime union
@@ -199,8 +199,5 @@ function Trim2(
   string|null $String,
   string $Characters = "\n\r\t\v\0"
 ):string{
-  if($String === null):
-    $String = '';
-  endif;
-  return trim($String, $Characters);
+  return trim($String ?? '', $Characters);
 }

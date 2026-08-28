@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.02.27.00
+//2026.08.28.00
 
 function TelegramSignCheck(
   string $Token,
@@ -21,9 +21,8 @@ function TelegramSignCheck(
   if(strcmp($HashSended, $HashRight) !== 0
   or time() > strtotime('+' . $TimeoutMinutes . ' minutes', $Data['auth_date'])):
     return false;
-  else:
-    return true;
   endif;
+  return true;
 }
 
 /**
@@ -53,7 +52,6 @@ function TelegramWebappCheck(
   if($HashSended !== $HashRight
   or time() > strtotime('+' . $TimeoutMinutes . ' minutes', $Data['auth_date'])):
     return false;
-  else:
-    return true;
   endif;
+  return true;
 }
