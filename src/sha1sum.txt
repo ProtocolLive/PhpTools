@@ -1,7 +1,7 @@
 f585823aa77eb4eab73564c3c357ffb6f866ff2c  Basics.php
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 84f45288ffd92ab3af28a1fa65eb5907ac14d741  Cripto.php
-fe05f0650053af13b6983a80bc09af4a6dce25c9  CronTool.php
+b68ad51f32702f2855055629099fb81f6b8d3447  CronTool.php
 ffd26c04a5e6556cc76ccd79f2498d14947c7416  Crud.php
 78a2447b30ac7464cd7e00644166373801c7ef53  Debug.php
 eb9a7de407213b6c754bdac111f97062c3bce67e  Enum\ConsoleColorBg.php
@@ -17,5 +17,5 @@ cf138b6bc6709e2d93e0d25746288d1d70f4815d  Enum\FopenMode.php
 2ef2b80c41d27bee7784989ebca219075f713812  Enum\Meses.php
 040c4aed5a82828c8b1c888f4ba6a016c49798ac  Enum\Semana.php
 10c4196aa10e19cfdde91f3ef4406a125f8f92e7  Enum\Weekday.php
-311c320e9055b21379bfed310aad01f9d40bb16f  Telegram.php
-adcd5e513bb771226ac3a90afec925d56f9d585f  Upgrades.php
+87bd54d707a668c72e2f66973b7549be920d832b  Telegram.php
+95f34e6bbb5bea751bf7fa60ec5b52b590277637  Upgrades.php
