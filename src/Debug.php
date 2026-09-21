@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.03.17.00
+//2026.09.21.00
 
 /*
  * Notes:
@@ -32,7 +32,8 @@ function Handler(
     echo $log;
   endif;
   if(ini_get('display_errors')):
-    if(ini_get('html_errors')):
+    if(ini_get('html_errors')
+    and PHP_SAPI !== 'cli'):
       echo '<pre style="text-align:left;white-space:pre-wrap">' . $log . '</pre>';
     else:
       echo $log;
@@ -61,7 +62,8 @@ function vd(
     return $values[0];
   endif;
   if(ini_get('display_errors')):
-    if(ini_get('html_errors')):
+    if(ini_get('html_errors')
+    and PHP_SAPI !== 'cli'):
       echo '<pre style="text-align:left;white-space:pre-wrap">' . $log . '</pre>';
     else:
       echo $log;
