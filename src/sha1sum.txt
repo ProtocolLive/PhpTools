@@ -1,4 +1,4 @@
-096f9570955d4cd836629f99f6f3a53c315b5850  Basics.php
+5313e3b290a3e488ed751ddd9cee581e71396a0e  Basics.php
 bf58d48e5a61a899dc9cf4a6d093f2f0016220f7  Console.php
 84f45288ffd92ab3af28a1fa65eb5907ac14d741  Cripto.php
 b68ad51f32702f2855055629099fb81f6b8d3447  CronTool.php
@@ -16,6 +16,7 @@ cf138b6bc6709e2d93e0d25746288d1d70f4815d  Enum\FopenMode.php
 6544e416c282fab34ac605633abda7afc7577015  Enum\HttpCode.php
 2ef2b80c41d27bee7784989ebca219075f713812  Enum\Meses.php
 040c4aed5a82828c8b1c888f4ba6a016c49798ac  Enum\Semana.php
+c7f3e25de2490ee50bd52a3b1f27b4d4844a7356  Enum\SessionStatusEnum.php
 10c4196aa10e19cfdde91f3ef4406a125f8f92e7  Enum\Weekday.php
 87bd54d707a668c72e2f66973b7549be920d832b  Telegram.php
 95f34e6bbb5bea751bf7fa60ec5b52b590277637  Upgrades.php
