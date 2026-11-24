@@ -1,7 +1,7 @@
 <?php
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpTools
-//2026.09.15.00
+//2026.11.24.00
 
 function AccentInsensitive(
   string $Text
@@ -90,9 +90,8 @@ function DateMath(
   endif;
   if($Timezone):
     return date($Format, strtotime($Math, $Date));
-  else:
-    return gmdate($Format, strtotime($Math, $Date));
   endif;
+  return gmdate($Format, strtotime($Math, $Date));
 }
 
 /**
@@ -119,9 +118,8 @@ function DetectEol(
 ):Eol{
   if(str_contains($Text, Eol::Crlf->value)):
     return Eol::Crlf;
-  else:
-    return Eol::Lf;
   endif;
+  return Eol::Lf;
 }
 
 function Equals(
@@ -138,9 +136,8 @@ function ExplodeLines(
 ):array{
   if(DetectEol($Text) === Eol::Lf):
     return explode(Eol::Lf->value, $Text);
-  else:
-    return explode(Eol::Crlf->value, $Text);
   endif;
+  return explode(Eol::Crlf->value, $Text);
 }
 
 /**
@@ -156,7 +153,7 @@ function F2s(
     $return = $temp . '\\';
   endif;
   $temp = $Function->getClosureScopeClass();
-  if($temp !== null):
+  if($temp instanceof ReflectionClass):
     $temp = $temp->getName();
     if($temp !== ''):
       $return .= $temp . '::';
@@ -284,7 +281,7 @@ function StrInt(
 function Uuid(
   string $Data
 ):string{
-  assert(strlen($Data) == 16);
+  assert(strlen($Data) === 16);
   $Data[6] = chr(ord($Data[6]) & 0x0f | 0x40); // set version to 0100
   $Data[8] = chr(ord($Data[8]) & 0x3f | 0x80); // set bits 6-7 to 10
   return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($Data), 4));
