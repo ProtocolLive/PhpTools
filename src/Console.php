@@ -2,7 +2,7 @@
 /**
  * @author Protocol Corporation Ltda.
  * @link https://github.com/ProtocolLive/PhpTools
- * @version 2026.11.24.00
+ * @version 2026.11.24.01
  * @php-min-ver 8.1
  */
 
@@ -12,7 +12,7 @@ function ConsoleColor(
   ConsoleColorBg|null $Color2 = null
 ):string{
   $return = "\e[" . $Color1->value;
-  if($Color2 !== null):
+  if($Color2 instanceof ConsoleColorBg):
     $return .= ';' . $Color2->value;
   endif;
   $return .= 'm' . $Text . "\e[0m";
