@@ -1,7 +1,10 @@
 <?php
-//Protocol Corporation Ltda.
-//https://github.com/ProtocolLive/PhpTools
-//2026.11.24.00
+/**
+ * @author Protocol Corporation Ltda.
+ * @link https://github.com/ProtocolLive/PhpTools
+ * @version 2026.11.24.00
+ * @php-min-ver 8.1
+ */
 
 function AccentInsensitive(
   string $Text
