@@ -2,7 +2,7 @@
 /**
  * @author Protocol Corporation Ltda.
  * @link https://github.com/ProtocolLive/PhpTools
- * @version 2026.11.24.00
+ * @version 2026.11.24.01
  * @php-min-ver 8.1
  */
 
@@ -49,11 +49,15 @@ function BlankNull(
  */
 function Csrf(
   bool $Check = false,
-  bool $Form = false
+  bool $Form = false,
+  bool $Get = false
 ):string|false{
   if($Form):
     $_SESSION['Csrf'] = sha1(uniqid());
     return '<input type="hidden" name="csrf" value="' . $_SESSION['Csrf'] . '">';
+  endif;
+  if($Get):
+    return $_SESSION['Csrf'] = sha1(uniqid());
   endif;
   if($Check):
     if(isset($_SESSION['Csrf']) === false):
