@@ -3,7 +3,7 @@
  * @author Protocol Corporation Ltda.
  * @link https://github.com/ProtocolLive/PhpTools
  * @version 2026.11.24.01
- * @php-min-ver 8.1
+ * @php-min-ver 8.2
  */
 
 function AccentInsensitive(
