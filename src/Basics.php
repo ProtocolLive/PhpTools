@@ -2,7 +2,7 @@
 /**
  * @author Protocol Corporation Ltda.
  * @link https://github.com/ProtocolLive/PhpTools
- * @version 2026.11.24.01
+ * @version 2026.11.25.00
  * @php-min-ver 8.2
  */
 
@@ -64,17 +64,23 @@ function Csrf(
       error_log('CSRF token not created');
       return false;
     endif;
-    if(empty(FilterInput(FilterFrom::Post, 'csrf', FilterValidate::Regex, [
+    $temp = FilterInput(FilterFrom::Post, 'csrf', FilterValidate::Regex, [
       'options' => [ 'regexp' => '/\b[0-9a-fA-F]{40,40}\b/']
-    ]))):
-      error_log('CSRF token not valid');
-      return false;
+    ]);
+    if(empty($temp)):
+      $temp = FilterInput(FilterFrom::Get, 'csrf', FilterValidate::Regex, [
+        'options' => [ 'regexp' => '/\b[0-9a-fA-F]{40,40}\b/']
+      ]);
+      if(empty($temp)):
+        error_log('CSRF token not valid');
+        return false;
+      endif;
     endif;
     $session = $_SESSION['Csrf'];
-    $post = $_POST['csrf'];
     unset($_SESSION['Csrf']);
     unset($_POST['csrf']);
-    return $session === $post;
+    unset($_GET['csrf']);
+    return $session === $temp;
   endif;
   return false;
 }
